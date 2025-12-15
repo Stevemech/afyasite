@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Team = () => {
-  const members = ["Aigerim", "Wendy", "Steve", "Yunxi"];
+  const members = ["Team Member", "Team Member", "Team Member", "Team Member"];
 
   return (
     <section className="py-20 px-4">
