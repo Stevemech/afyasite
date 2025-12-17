@@ -22,7 +22,7 @@ const Solution = () => {
   ];
 
   return (
-    <section className="py-20 px-4">
+    <section id="solution" className="py-20 px-4">
       <div className="max-w-6xl mx-auto">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
@@ -30,7 +30,7 @@ const Solution = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl font-bold text-brand-teal-dark mb-4">Our Approach</h2>
+          <h2 className="text-3xl font-display font-bold text-brand-teal-dark mb-4">Our Approach</h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             We bridge the gap with bite-sized, engaging learning experiences and powerful tools.
           </p>

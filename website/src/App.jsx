@@ -1,5 +1,6 @@
 import React from 'react';
 import FluidBackground from './components/FluidBackground';
+import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Problem from './components/Problem';
 import Solution from './components/Solution';
@@ -15,6 +16,7 @@ function App() {
   return (
     <div className="relative min-h-screen font-sans text-gray-800">
       <FluidBackground />
+      <Navbar />
       
       <main>
         <Hero />

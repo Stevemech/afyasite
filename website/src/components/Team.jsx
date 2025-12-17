@@ -4,9 +4,9 @@ const Team = () => {
   const members = ["Team Member", "Team Member", "Team Member", "Team Member"];
 
   return (
-    <section className="py-20 px-4">
+    <section id="team" className="py-20 px-4">
       <div className="max-w-4xl mx-auto text-center">
-        <h2 className="text-3xl font-bold text-brand-teal-dark mb-12">Meet the Team</h2>
+        <h2 className="text-3xl font-display font-bold text-brand-teal-dark mb-12">Meet the Team</h2>
         
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {members.map((member, idx) => (

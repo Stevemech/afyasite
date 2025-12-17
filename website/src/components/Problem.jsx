@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 const Problem = () => {
   return (
-    <section className="py-20 px-4 bg-white/50 backdrop-blur-sm">
+    <section id="problem" className="py-20 px-4 bg-white/50 backdrop-blur-sm">
       <div className="max-w-6xl mx-auto">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
@@ -13,7 +13,7 @@ const Problem = () => {
           className="grid md:grid-cols-2 gap-12 items-center"
         >
           <div>
-            <h2 className="text-3xl font-bold text-brand-teal-dark mb-6">The Challenge</h2>
+            <h2 className="text-3xl font-display font-bold text-brand-teal-dark mb-6">The Challenge</h2>
             <div className="bg-red-50 border-l-4 border-red-500 p-6 mb-8 rounded-r-lg">
               <div className="flex items-start gap-4">
                 <AlertCircle className="text-red-500 shrink-0 mt-1" />
