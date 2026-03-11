@@ -58,10 +58,12 @@ const Navbar = () => {
                 </a>
               ))}
               <a
-                href="#solution"
+                href="https://stevemech.github.io/AfyaQuestMobile/login"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="ml-4 inline-flex items-center gap-1.5 bg-brand-teal-dark text-white pl-5 pr-4 py-2.5 rounded-full text-[15px] font-semibold hover:bg-brand-teal transition-colors shadow-sm hover:shadow-md"
               >
-                Get Started <ArrowUpRight size={16} strokeWidth={2.5} />
+                Admin Login <ArrowUpRight size={16} strokeWidth={2.5} />
               </a>
             </div>
 
@@ -107,11 +109,13 @@ const Navbar = () => {
                 </motion.a>
               ))}
               <a
-                href="#solution"
+                href="https://stevemech.github.io/AfyaQuestMobile/login"
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={() => setMobileMenuOpen(false)}
                 className="mt-4 inline-flex items-center justify-center gap-2 bg-brand-teal-dark text-white px-8 py-3.5 rounded-full font-semibold text-lg shadow-md"
               >
-                Get Started <ArrowUpRight size={20} />
+                Admin Login <ArrowUpRight size={20} />
               </a>
             </motion.div>
           </motion.div>
