@@ -1,5 +1,6 @@
 import React from 'react';
 import { Github, Mail, ExternalLink, ArrowUpRight } from 'lucide-react';
+import logoImg from '../assets/logo.png';
 
 const Footer = () => {
   return (
@@ -12,7 +13,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-12 gap-12 md:gap-8">
           <div className="md:col-span-5">
             <div className="flex items-center gap-4 mb-6">
-              <img src="/logo.png" alt="AfyaQuest" className="h-14 w-auto" />
+              <img src={logoImg} alt="AfyaQuest" className="h-14 w-auto" />
               <span className="font-display text-2xl font-bold tracking-tight">AfyaQuest</span>
             </div>
             <p className="text-brand-teal-light/70 leading-relaxed max-w-sm">

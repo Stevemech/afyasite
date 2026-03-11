@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion, useScroll, useMotionValueEvent, AnimatePresence } from 'framer-motion';
 import { Menu, X, ArrowUpRight } from 'lucide-react';
+import logoImg from '../assets/logo.png';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -39,7 +40,7 @@ const Navbar = () => {
               whileTap={{ scale: 0.95 }}
             >
               <img
-                src="/logo.png"
+                src={logoImg}
                 alt="AfyaQuest"
                 className={`transition-all duration-500 ${isScrolled ? 'h-9' : 'h-11'} w-auto`}
               />

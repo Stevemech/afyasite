@@ -1,6 +1,7 @@
 import React from 'react';
 import { Play, ArrowRight, ChevronDown } from 'lucide-react';
 import { motion } from 'framer-motion';
+import logoImg from '../assets/logo.png';
 
 const Hero = () => {
   return (
@@ -28,7 +29,7 @@ const Hero = () => {
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
         >
           <motion.img
-            src="/logo.png"
+            src={logoImg}
             alt="AfyaQuest"
             className="w-20 h-20 md:w-24 md:h-24 mx-auto mb-10"
             initial={{ scale: 0.6, opacity: 0 }}
