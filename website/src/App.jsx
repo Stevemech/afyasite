@@ -15,6 +15,7 @@ import Footer from './components/Footer';
 function App() {
   return (
     <div className="relative min-h-screen font-sans text-gray-800">
+      <div className="grain-overlay" />
       <FluidBackground />
       <Navbar />
       

@@ -3,38 +3,29 @@ import { motion } from 'framer-motion';
 
 const FluidBackground = () => {
   return (
-    <div className="fixed inset-0 -z-10 overflow-hidden bg-gradient-to-br from-brand-surface via-white to-brand-surface">
-      <div className="absolute top-0 left-0 w-full h-full opacity-50">
-        <motion.div 
-          animate={{ 
-            x: [0, 100, 0],
-            y: [0, -50, 0],
-            scale: [1, 1.2, 1],
-            rotate: [0, 45, 0]
-          }}
-          transition={{ duration: 20, repeat: Infinity, repeatType: "reverse" }}
-          className="absolute -top-1/2 -left-1/4 w-[150%] h-[150%] rounded-[40%] bg-gradient-to-r from-brand-teal-light/30 to-brand-teal-mid/20 blur-3xl"
-        />
-        <motion.div 
-          animate={{ 
-            x: [0, -100, 0],
-            y: [0, 50, 0],
-            scale: [1, 1.1, 1],
-            rotate: [0, -30, 0]
-          }}
-          transition={{ duration: 25, repeat: Infinity, repeatType: "reverse" }}
-          className="absolute top-1/2 -right-1/4 w-[150%] h-[150%] rounded-[45%] bg-gradient-to-l from-brand-gold-light/25 to-brand-teal-light/25 blur-3xl"
-        />
-        <motion.div 
-          animate={{ 
-            x: [-50, 50, -50],
-            y: [-20, 20, -20],
-            scale: [1.1, 0.9, 1.1]
-          }}
-          transition={{ duration: 30, repeat: Infinity, repeatType: "reverse" }}
-          className="absolute top-1/4 left-1/4 w-full h-full rounded-[50%] bg-gradient-to-t from-brand-teal-light/15 to-transparent blur-3xl"
-        />
-      </div>
+    <div className="fixed inset-0 -z-10 overflow-hidden">
+      <div className="absolute inset-0 bg-brand-surface" />
+
+      <motion.div
+        animate={{ x: [0, 60, 0], y: [0, -40, 0], scale: [1, 1.15, 1] }}
+        transition={{ duration: 25, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }}
+        className="absolute -top-1/3 -left-1/4 w-[80%] h-[80%] rounded-full animate-pulse-soft"
+        style={{ background: 'radial-gradient(circle, rgba(178,232,241,0.35) 0%, transparent 70%)' }}
+      />
+
+      <motion.div
+        animate={{ x: [0, -50, 0], y: [0, 30, 0], scale: [1, 1.1, 1] }}
+        transition={{ duration: 30, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }}
+        className="absolute top-1/2 -right-1/4 w-[70%] h-[70%] rounded-full"
+        style={{ background: 'radial-gradient(circle, rgba(239,160,63,0.12) 0%, transparent 70%)' }}
+      />
+
+      <motion.div
+        animate={{ x: [-30, 30, -30], y: [-20, 20, -20] }}
+        transition={{ duration: 35, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }}
+        className="absolute bottom-0 left-1/3 w-[60%] h-[60%] rounded-full"
+        style={{ background: 'radial-gradient(circle, rgba(95,159,159,0.2) 0%, transparent 70%)' }}
+      />
     </div>
   );
 };

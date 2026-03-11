@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { motion, useScroll, useMotionValueEvent } from 'framer-motion';
-import { Menu, X } from 'lucide-react';
+import { motion, useScroll, useMotionValueEvent, AnimatePresence } from 'framer-motion';
+import { Menu, X, ArrowUpRight } from 'lucide-react';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -23,41 +23,51 @@ const Navbar = () => {
       <motion.nav
         initial={{ y: -100 }}
         animate={{ y: 0 }}
-        transition={{ duration: 0.5 }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          isScrolled 
-            ? 'py-3 bg-white/70 backdrop-blur-md shadow-sm border-b border-white/20' 
+        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+          isScrolled
+            ? 'py-3 bg-white/80 backdrop-blur-2xl shadow-[0_1px_0_rgba(67,136,148,0.08)]'
             : 'py-5 bg-transparent'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
           <div className="flex items-center justify-between">
-            <div className="flex-shrink-0 cursor-pointer flex items-center gap-3" onClick={() => window.scrollTo(0, 0)}>
-              <img src="/logo.png" alt="AfyaQuest" className={`transition-all duration-300 ${isScrolled ? 'h-9' : 'h-11'} w-auto`} />
-              <span className="font-display text-xl font-bold text-brand-teal-dark tracking-tight">
-                Afya<span className="text-brand-gold-dark">Quest</span>
-              </span>
-            </div>
+            <motion.div
+              className="flex-shrink-0 cursor-pointer"
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <img
+                src="/logo.png"
+                alt="AfyaQuest"
+                className={`transition-all duration-500 ${isScrolled ? 'h-9' : 'h-11'} w-auto`}
+              />
+            </motion.div>
 
-            <div className="hidden md:flex items-center space-x-8">
+            <div className="hidden md:flex items-center gap-1">
               {navLinks.map((link) => (
                 <a
                   key={link.name}
                   href={link.href}
-                  className="text-gray-600 hover:text-brand-teal-dark font-medium transition-colors"
+                  className="relative px-4 py-2 text-[15px] font-medium text-brand-teal-dark/70 hover:text-brand-teal-dark transition-colors group"
                 >
                   {link.name}
+                  <span className="absolute bottom-0.5 left-4 right-4 h-[2px] bg-brand-gold scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300" />
                 </a>
               ))}
-              <button className="bg-brand-gold hover:bg-brand-gold-dark text-white px-6 py-2.5 rounded-full font-semibold transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
-                Get Started
-              </button>
+              <a
+                href="#solution"
+                className="ml-4 inline-flex items-center gap-1.5 bg-brand-teal-dark text-white pl-5 pr-4 py-2.5 rounded-full text-[15px] font-semibold hover:bg-brand-teal transition-colors shadow-sm hover:shadow-md"
+              >
+                Get Started <ArrowUpRight size={16} strokeWidth={2.5} />
+              </a>
             </div>
 
             <div className="md:hidden">
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="text-gray-600 hover:text-brand-teal-dark p-2"
+                className="text-brand-teal-dark p-2 rounded-lg hover:bg-brand-teal/10 transition-colors"
               >
                 {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
               </button>
@@ -66,30 +76,46 @@ const Navbar = () => {
         </div>
       </motion.nav>
 
-      {mobileMenuOpen && (
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -20 }}
-          className="fixed inset-0 z-40 bg-white pt-24 px-4 md:hidden"
-        >
-          <div className="flex flex-col space-y-6 text-center">
-            {navLinks.map((link) => (
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="fixed inset-0 z-40 bg-white/95 backdrop-blur-2xl pt-28 px-6 md:hidden"
+          >
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 20 }}
+              transition={{ duration: 0.3 }}
+              className="flex flex-col gap-2"
+            >
+              {navLinks.map((link, idx) => (
+                <motion.a
+                  key={link.name}
+                  href={link.href}
+                  onClick={() => setMobileMenuOpen(false)}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: idx * 0.05 }}
+                  className="text-2xl font-display font-semibold text-brand-teal-dark py-3 border-b border-brand-teal/10 hover:text-brand-teal transition-colors"
+                >
+                  {link.name}
+                </motion.a>
+              ))}
               <a
-                key={link.name}
-                href={link.href}
+                href="#solution"
                 onClick={() => setMobileMenuOpen(false)}
-                className="text-xl font-medium text-gray-800 hover:text-brand-teal"
+                className="mt-4 inline-flex items-center justify-center gap-2 bg-brand-teal-dark text-white px-8 py-3.5 rounded-full font-semibold text-lg shadow-md"
               >
-                {link.name}
+                Get Started <ArrowUpRight size={20} />
               </a>
-            ))}
-            <button className="bg-brand-gold text-white px-8 py-3 rounded-full font-semibold text-lg shadow-md">
-              Get Started
-            </button>
-          </div>
-        </motion.div>
-      )}
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 };
