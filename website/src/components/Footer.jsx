@@ -13,7 +13,7 @@ const Footer = () => {
               <span className="font-display text-2xl font-bold tracking-tight">AfyaQuest</span>
             </div>
             <p className="text-brand-teal-light leading-relaxed max-w-sm">
-              Empowering Community Health Volunteers with gamified training and data-driven tools for rural Kenya.
+              Empowering Community Health Volunteers with gamified training and data-driven tools.
             </p>
           </div>
 

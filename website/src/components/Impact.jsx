@@ -40,7 +40,7 @@ const Impact = () => {
             Real-world impact
           </h2>
           <p className="text-lg md:text-xl text-brand-teal-light max-w-2xl mx-auto leading-relaxed">
-            Building a stronger foundation for rural healthcare systems across Kenya.
+            Building a stronger foundation for rural healthcare systems.
           </p>
         </motion.div>
 

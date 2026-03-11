@@ -45,7 +45,7 @@ const Problem = () => {
             <div className="flex items-start gap-3 bg-brand-gold/10 border border-brand-gold/20 rounded-2xl p-5 mb-10">
               <AlertTriangle className="text-brand-gold shrink-0 mt-0.5" size={22} />
               <p className="text-brand-gold-light text-[15px] leading-relaxed font-medium">
-                CHVs are unpaid first responders — the EMT-equivalent serving communities across rural Kenya with minimal support.
+                CHVs are unpaid first responders — the EMT-equivalent serving communities with minimal support.
               </p>
             </div>
 
