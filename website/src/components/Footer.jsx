@@ -5,9 +5,12 @@ const Footer = () => {
   return (
     <footer className="bg-brand-teal-dark text-white py-12 px-4">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
-        <div className="text-center md:text-left">
-          <h2 className="text-2xl font-bold mb-2">AfyaQuest</h2>
-          <p className="text-brand-teal-light text-sm">Empowering Community Health Volunteers.</p>
+        <div className="text-center md:text-left flex items-center gap-4">
+          <img src="/logo.png" alt="AfyaQuest" className="h-12 w-auto brightness-0 invert" />
+          <div>
+            <h2 className="text-2xl font-bold mb-1">AfyaQuest</h2>
+            <p className="text-brand-teal-light text-sm">Empowering Community Health Volunteers.</p>
+          </div>
         </div>
 
         <div className="flex gap-6">

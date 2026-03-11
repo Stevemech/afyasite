@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { motion, useScroll, useMotionValueEvent } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 
@@ -26,36 +26,34 @@ const Navbar = () => {
         transition={{ duration: 0.5 }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled 
-            ? 'py-4 bg-white/70 backdrop-blur-md shadow-sm border-b border-white/20' 
-            : 'py-6 bg-transparent'
+            ? 'py-3 bg-white/70 backdrop-blur-md shadow-sm border-b border-white/20' 
+            : 'py-5 bg-transparent'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
-            {/* Logo */}
-            <div className="flex-shrink-0 cursor-pointer" onClick={() => window.scrollTo(0, 0)}>
-              <span className="font-display text-2xl font-bold text-brand-teal-dark tracking-tight">
-                Afya<span className="text-brand-gold">Quest</span>
+            <div className="flex-shrink-0 cursor-pointer flex items-center gap-3" onClick={() => window.scrollTo(0, 0)}>
+              <img src="/logo.png" alt="AfyaQuest" className={`transition-all duration-300 ${isScrolled ? 'h-9' : 'h-11'} w-auto`} />
+              <span className="font-display text-xl font-bold text-brand-teal-dark tracking-tight">
+                Afya<span className="text-brand-gold-dark">Quest</span>
               </span>
             </div>
 
-            {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8">
               {navLinks.map((link) => (
                 <a
                   key={link.name}
                   href={link.href}
-                  className="text-gray-600 hover:text-brand-teal font-medium transition-colors"
+                  className="text-gray-600 hover:text-brand-teal-dark font-medium transition-colors"
                 >
                   {link.name}
                 </a>
               ))}
-              <button className="bg-brand-teal hover:bg-brand-teal-dark text-white px-6 py-2.5 rounded-full font-semibold transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
+              <button className="bg-brand-gold hover:bg-brand-gold-dark text-white px-6 py-2.5 rounded-full font-semibold transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
                 Get Started
               </button>
             </div>
 
-            {/* Mobile Menu Button */}
             <div className="md:hidden">
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -68,7 +66,6 @@ const Navbar = () => {
         </div>
       </motion.nav>
 
-      {/* Mobile Menu Overlay */}
       {mobileMenuOpen && (
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -87,7 +84,7 @@ const Navbar = () => {
                 {link.name}
               </a>
             ))}
-            <button className="bg-brand-teal text-white px-8 py-3 rounded-full font-semibold text-lg shadow-md">
+            <button className="bg-brand-gold text-white px-8 py-3 rounded-full font-semibold text-lg shadow-md">
               Get Started
             </button>
           </div>

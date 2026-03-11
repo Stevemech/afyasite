@@ -5,12 +5,10 @@ import { motion } from 'framer-motion';
 const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center px-4 pt-20 pb-16 overflow-hidden">
-      {/* Abstract Grid Background */}
-      <div className="absolute inset-0 z-0 opacity-30" 
-           style={{ backgroundImage: 'radial-gradient(#5F9EA0 1px, transparent 1px)', backgroundSize: '40px 40px' }}>
+      <div className="absolute inset-0 z-0 opacity-20" 
+           style={{ backgroundImage: 'radial-gradient(#438894 1px, transparent 1px)', backgroundSize: '40px 40px' }}>
       </div>
       
-      {/* Floating Elements */}
       <motion.div 
         animate={{ y: [0, -20, 0] }}
         transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
@@ -28,11 +26,19 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
+          <motion.img 
+            src="/logo.png" 
+            alt="AfyaQuest" 
+            className="w-24 h-24 mx-auto mb-8 drop-shadow-lg"
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          />
           <span className="inline-block py-1.5 px-4 rounded-full bg-brand-gold/20 text-brand-gold-dark text-sm font-semibold mb-6 border border-brand-gold/30">
             Social Impact Track
           </span>
           <h1 className="text-5xl md:text-7xl font-display font-bold text-brand-teal-dark mb-6 leading-tight tracking-tight">
-            AfyaQuest: Transforming <br className="hidden md:block"/> Community Healthcare <br className="hidden md:block"/> Training in <span className="text-brand-teal bg-brand-teal/10 px-2 rounded-lg inline-block transform -rotate-1">Rural Kenya</span>
+            Transforming <br className="hidden md:block"/> Community Healthcare <br className="hidden md:block"/> Training in <span className="text-brand-teal bg-brand-teal/10 px-2 rounded-lg inline-block transform -rotate-1">Rural Kenya</span>
           </h1>
           <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
             Gamified learning platform empowering Community Health Volunteers through interactive training and data-driven healthcare delivery.

@@ -9,16 +9,17 @@ export default {
       colors: {
         brand: {
           teal: {
-            light: '#88C0C0',
-            DEFAULT: '#5F9EA0', // Main teal
-            dark: '#2F4F4F',
+            light: '#B2E8F1',
+            DEFAULT: '#438894',
+            mid: '#5F9F9F',
+            dark: '#254D4D',
           },
           gold: {
-            light: '#FFE599',
-            DEFAULT: '#F4C430', // Main gold/yellow
-            dark: '#B8860B',
+            light: '#FDE8C8',
+            DEFAULT: '#EFA03F',
+            dark: '#E4891A',
           },
-          surface: '#F5F9F9',
+          surface: '#EAF6F9',
         }
       },
       fontFamily: {
