@@ -1,5 +1,4 @@
 import React from 'react';
-import FluidBackground from './components/FluidBackground';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Problem from './components/Problem';
@@ -15,10 +14,8 @@ import Footer from './components/Footer';
 function App() {
   return (
     <div className="relative min-h-screen font-sans text-gray-800">
-      <div className="grain-overlay" />
-      <FluidBackground />
       <Navbar />
-      
+
       <main>
         <Hero />
         <Problem />
@@ -30,7 +27,7 @@ function App() {
         <Roadmap />
         <Team />
       </main>
-      
+
       <Footer />
     </div>
   );

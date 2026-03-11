@@ -25,14 +25,14 @@ const pillars = [
 
 const Solution = () => {
   return (
-    <section id="solution" className="py-24 md:py-32 px-5 sm:px-8 lg:px-10">
+    <section id="solution" className="py-24 md:py-32 px-5 sm:px-8 lg:px-10 bg-white">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-20"
+          className="text-center mb-16"
         >
           <span className="inline-block text-brand-teal text-sm font-semibold tracking-wider uppercase mb-4">Our Approach</span>
           <h2 className="section-heading text-brand-teal-dark mb-5">
@@ -51,20 +51,20 @@ const Solution = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1, duration: 0.6 }}
-              className="group relative bg-white rounded-3xl p-8 lg:p-10 border border-gray-100 hover:border-brand-teal/20 transition-all duration-500 hover:shadow-xl hover:shadow-brand-teal/5 hover:-translate-y-1"
+              className="group relative bg-brand-surface rounded-3xl p-8 lg:p-10 border border-brand-teal/10 hover:border-brand-teal/30 transition-all duration-500 hover:shadow-xl hover:shadow-brand-teal/10 hover:-translate-y-1"
             >
-              <div className="absolute top-8 right-8 lg:top-10 lg:right-10 font-display text-6xl font-extrabold text-brand-teal-dark/[0.04] leading-none select-none">
+              <div className="absolute top-8 right-8 lg:top-10 lg:right-10 font-display text-6xl font-extrabold text-brand-teal-dark/[0.06] leading-none select-none">
                 {pillar.num}
               </div>
 
-              <div className="w-14 h-14 rounded-2xl bg-brand-teal-dark/5 text-brand-teal-dark flex items-center justify-center mb-6 group-hover:bg-brand-teal-dark group-hover:text-white transition-all duration-500">
+              <div className="w-14 h-14 rounded-2xl bg-brand-teal-dark text-white flex items-center justify-center mb-6 group-hover:bg-brand-gold transition-all duration-500">
                 {pillar.icon}
               </div>
 
               <h3 className="font-display font-bold text-xl text-brand-teal-dark mb-3">{pillar.title}</h3>
               <p className="text-gray-500 leading-relaxed">{pillar.desc}</p>
 
-              <div className="mt-6 h-[3px] w-8 rounded-full bg-brand-gold/0 group-hover:bg-brand-gold group-hover:w-12 transition-all duration-500" />
+              <div className="mt-6 h-[3px] w-8 rounded-full bg-brand-gold group-hover:w-12 transition-all duration-500" />
             </motion.div>
           ))}
         </div>

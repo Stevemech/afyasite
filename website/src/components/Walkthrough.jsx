@@ -39,13 +39,13 @@ const Walkthrough = () => {
   const [activeStep, setActiveStep] = useState(0);
 
   return (
-    <section className="py-24 md:py-32 px-5 sm:px-8 lg:px-10">
+    <section className="py-24 md:py-32 px-5 sm:px-8 lg:px-10 bg-white">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-20"
+          className="text-center mb-16"
         >
           <span className="inline-block text-brand-teal text-sm font-semibold tracking-wider uppercase mb-4">Walkthrough</span>
           <h2 className="section-heading text-brand-teal-dark">How it works</h2>
@@ -54,20 +54,18 @@ const Walkthrough = () => {
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
           <div className="lg:w-[320px] shrink-0">
             <div className="relative flex flex-col gap-1">
-              <div className="absolute left-[23px] top-4 bottom-4 w-[2px] bg-brand-teal-dark/5 rounded-full hidden lg:block" />
-
               {steps.map((step, idx) => (
                 <button
                   key={step.id}
                   onClick={() => setActiveStep(idx)}
                   className={`relative flex items-center gap-4 px-4 py-3.5 rounded-xl text-left transition-all duration-300 ${
                     activeStep === idx
-                      ? 'bg-brand-teal-dark text-white shadow-lg shadow-brand-teal-dark/15'
-                      : 'text-gray-500 hover:bg-brand-teal-dark/[0.03] hover:text-brand-teal-dark'
+                      ? 'bg-brand-teal-dark text-white shadow-lg'
+                      : 'text-gray-600 hover:bg-brand-surface hover:text-brand-teal-dark'
                   }`}
                 >
-                  <div className={`relative z-10 w-[34px] h-[34px] rounded-lg flex items-center justify-center shrink-0 transition-colors duration-300 ${
-                    activeStep === idx ? 'bg-brand-gold text-white' : 'bg-brand-teal-dark/5 text-brand-teal-dark/40'
+                  <div className={`w-[34px] h-[34px] rounded-lg flex items-center justify-center shrink-0 transition-colors duration-300 ${
+                    activeStep === idx ? 'bg-brand-gold text-white' : 'bg-gray-100 text-gray-400'
                   }`}>
                     {step.icon}
                   </div>
@@ -78,7 +76,7 @@ const Walkthrough = () => {
           </div>
 
           <div className="flex-1 relative">
-            <div className="bg-white rounded-3xl shadow-xl shadow-brand-teal-dark/[0.04] border border-gray-100 p-8 md:p-12 min-h-[420px]">
+            <div className="bg-brand-surface rounded-3xl border border-brand-teal/10 p-8 md:p-12 min-h-[420px]">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={activeStep}
@@ -93,21 +91,21 @@ const Walkthrough = () => {
                       {steps[activeStep].icon}
                     </div>
                     <div>
-                      <p className="text-xs font-semibold text-brand-teal/60 uppercase tracking-wider">Step {activeStep + 1} of {steps.length}</p>
+                      <p className="text-xs font-semibold text-brand-teal uppercase tracking-wider">Step {activeStep + 1} of {steps.length}</p>
                       <h3 className="text-2xl font-display font-bold text-brand-teal-dark">{steps[activeStep].title}</h3>
                     </div>
                   </div>
 
-                  <p className="text-gray-500 text-lg leading-relaxed mb-8">
+                  <p className="text-gray-600 text-lg leading-relaxed mb-8">
                     {steps[activeStep].content}
                   </p>
 
-                  <div className="mt-auto bg-brand-surface rounded-2xl aspect-video flex items-center justify-center border-2 border-dashed border-brand-teal/10">
+                  <div className="mt-auto bg-white rounded-2xl aspect-video flex items-center justify-center border-2 border-dashed border-brand-teal/15">
                     <div className="text-center">
-                      <div className="w-12 h-12 rounded-full bg-brand-teal-dark/5 flex items-center justify-center mx-auto mb-2">
+                      <div className="w-12 h-12 rounded-full bg-brand-teal-dark/10 text-brand-teal-dark flex items-center justify-center mx-auto mb-2">
                         {steps[activeStep].icon}
                       </div>
-                      <p className="text-brand-teal-dark/30 text-sm font-medium">App Screenshot: {steps[activeStep].title}</p>
+                      <p className="text-brand-teal-dark/40 text-sm font-medium">App Screenshot: {steps[activeStep].title}</p>
                     </div>
                   </div>
                 </motion.div>

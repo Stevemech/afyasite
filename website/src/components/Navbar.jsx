@@ -27,7 +27,7 @@ const Navbar = () => {
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           isScrolled
-            ? 'py-3 bg-white/80 backdrop-blur-2xl shadow-[0_1px_0_rgba(67,136,148,0.08)]'
+            ? 'py-3 bg-white/90 backdrop-blur-xl shadow-sm'
             : 'py-5 bg-transparent'
         }`}
       >
@@ -42,7 +42,7 @@ const Navbar = () => {
               <img
                 src={logoImg}
                 alt="AfyaQuest"
-                className={`transition-all duration-500 ${isScrolled ? 'h-9' : 'h-11'} w-auto`}
+                className={`rounded-full transition-all duration-500 ${isScrolled ? 'h-9 w-9' : 'h-11 w-11'} object-cover`}
               />
             </motion.div>
 
@@ -84,7 +84,7 @@ const Navbar = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-40 bg-white/95 backdrop-blur-2xl pt-28 px-6 md:hidden"
+            className="fixed inset-0 z-40 bg-white pt-28 px-6 md:hidden"
           >
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -101,7 +101,7 @@ const Navbar = () => {
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: idx * 0.05 }}
-                  className="text-2xl font-display font-semibold text-brand-teal-dark py-3 border-b border-brand-teal/10 hover:text-brand-teal transition-colors"
+                  className="text-2xl font-display font-semibold text-brand-teal-dark py-3 border-b border-gray-200 hover:text-brand-teal transition-colors"
                 >
                   {link.name}
                 </motion.a>

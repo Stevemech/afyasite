@@ -10,13 +10,13 @@ const members = [
 
 const Team = () => {
   return (
-    <section id="team" className="py-24 md:py-32 px-5 sm:px-8 lg:px-10">
+    <section id="team" className="py-24 md:py-32 px-5 sm:px-8 lg:px-10 bg-white">
       <div className="max-w-5xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-20"
+          className="text-center mb-16"
         >
           <span className="inline-block text-brand-teal text-sm font-semibold tracking-wider uppercase mb-4">Team</span>
           <h2 className="section-heading text-brand-teal-dark">Meet the team</h2>
@@ -33,10 +33,10 @@ const Team = () => {
               className="group text-center"
             >
               <div className="relative mx-auto mb-5 w-28 h-28 md:w-32 md:h-32">
-                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-brand-teal to-brand-teal-mid opacity-20 group-hover:opacity-30 transition-opacity duration-300" />
+                <div className="absolute inset-0 rounded-full bg-brand-teal" />
                 <div className="absolute inset-[3px] rounded-full bg-brand-surface" />
-                <div className="absolute inset-[3px] rounded-full bg-gradient-to-br from-brand-teal/10 to-brand-teal-light/20 flex items-center justify-center">
-                  <span className="font-display font-bold text-2xl md:text-3xl text-brand-teal-dark/40 group-hover:text-brand-teal-dark/60 transition-colors">
+                <div className="absolute inset-[3px] rounded-full bg-brand-teal/10 flex items-center justify-center">
+                  <span className="font-display font-bold text-2xl md:text-3xl text-brand-teal-dark group-hover:text-brand-teal transition-colors">
                     {member.name[0]}
                   </span>
                 </div>
@@ -45,7 +45,7 @@ const Team = () => {
                 </div>
               </div>
               <h3 className="font-display font-bold text-brand-teal-dark">{member.name}</h3>
-              <p className="text-sm text-gray-400 mt-0.5">{member.role}</p>
+              <p className="text-sm text-gray-500 mt-0.5">{member.role}</p>
             </motion.div>
           ))}
         </div>

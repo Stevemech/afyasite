@@ -5,22 +5,9 @@ import logoImg from '../assets/logo.png';
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center px-5 pt-24 pb-20 overflow-hidden">
-      <div className="absolute top-20 right-[15%] w-64 h-64 rounded-full border border-brand-teal-light/20 hidden lg:block" />
-      <div className="absolute bottom-32 left-[8%] w-40 h-40 rounded-full border border-brand-gold/15 hidden lg:block" />
-      <div className="absolute top-1/3 left-[5%] w-3 h-3 rounded-full bg-brand-gold/40 hidden lg:block" />
-      <div className="absolute bottom-1/4 right-[12%] w-2 h-2 rounded-full bg-brand-teal/40 hidden lg:block" />
-
-      <motion.div
-        animate={{ y: [0, -15, 0] }}
-        transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute top-1/4 right-[10%] w-24 h-24 bg-brand-teal-light/15 rounded-full blur-2xl hidden md:block"
-      />
-      <motion.div
-        animate={{ y: [0, 15, 0] }}
-        transition={{ duration: 9, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-        className="absolute bottom-1/3 left-[8%] w-32 h-32 bg-brand-gold/10 rounded-full blur-2xl hidden md:block"
-      />
+    <section className="relative min-h-screen flex flex-col items-center justify-center px-5 pt-24 pb-20 overflow-hidden bg-brand-surface">
+      <div className="absolute top-20 right-[15%] w-64 h-64 rounded-full border border-brand-teal/10 hidden lg:block" />
+      <div className="absolute bottom-32 left-[8%] w-40 h-40 rounded-full border border-brand-gold/20 hidden lg:block" />
 
       <div className="max-w-5xl mx-auto text-center z-10 relative">
         <motion.div
@@ -31,7 +18,7 @@ const Hero = () => {
           <motion.img
             src={logoImg}
             alt="AfyaQuest"
-            className="w-20 h-20 md:w-24 md:h-24 mx-auto mb-10"
+            className="w-20 h-20 md:w-24 md:h-24 mx-auto mb-10 rounded-full object-cover"
             initial={{ scale: 0.6, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.7, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
@@ -43,7 +30,7 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
         >
-          <span className="inline-block py-1.5 px-5 rounded-full bg-brand-teal-dark/5 text-brand-teal-dark text-sm font-semibold mb-8 border border-brand-teal-dark/10">
+          <span className="inline-block py-1.5 px-5 rounded-full bg-brand-teal-dark/8 text-brand-teal-dark text-sm font-semibold mb-8 border border-brand-teal-dark/10">
             Social Impact Track
           </span>
         </motion.div>
@@ -59,7 +46,7 @@ const Hero = () => {
           Healthcare Training in{' '}
           <span className="relative inline-block">
             <span className="relative z-10">Rural Kenya</span>
-            <span className="absolute -bottom-1 left-0 right-0 h-[0.35em] bg-brand-gold/30 -z-0 rounded-full" />
+            <span className="absolute -bottom-1 left-0 right-0 h-[0.35em] bg-brand-gold/40 -z-0 rounded-full" />
           </span>
         </motion.h1>
 
@@ -81,14 +68,14 @@ const Hero = () => {
         >
           <a
             href="#solution"
-            className="group flex items-center gap-2.5 bg-brand-teal-dark hover:bg-brand-teal text-white px-8 py-3.5 rounded-full font-semibold transition-all duration-300 shadow-lg shadow-brand-teal-dark/20 hover:shadow-xl hover:shadow-brand-teal/20"
+            className="group flex items-center gap-2.5 bg-brand-teal-dark hover:bg-brand-teal text-white px-8 py-3.5 rounded-full font-semibold transition-all duration-300 shadow-lg shadow-brand-teal-dark/20"
           >
             <Play size={18} fill="currentColor" className="group-hover:scale-110 transition-transform" />
             Watch Demo
           </a>
           <a
             href="#problem"
-            className="group flex items-center gap-2 text-brand-teal-dark border-2 border-brand-teal-dark/15 hover:border-brand-teal-dark/40 bg-white/60 backdrop-blur-sm px-8 py-3.5 rounded-full font-semibold transition-all duration-300"
+            className="group flex items-center gap-2 text-brand-teal-dark border-2 border-brand-teal-dark/20 hover:border-brand-teal-dark bg-white px-8 py-3.5 rounded-full font-semibold transition-all duration-300"
           >
             Learn More
             <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
