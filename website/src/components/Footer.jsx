@@ -8,10 +8,10 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-6 py-16 md:py-20">
         <div className="grid md:grid-cols-12 gap-12 md:gap-8">
           <div className="md:col-span-5">
-            <div className="flex items-center gap-4 mb-6">
+            <a href="/" className="flex items-center gap-4 mb-6 w-fit hover:opacity-90 transition-opacity">
               <img src={logoImg} alt="AfyaQuest" className="h-14 w-14 rounded-full object-cover" />
               <span className="font-display text-2xl font-bold tracking-tight">AfyaQuest</span>
-            </div>
+            </a>
             <p className="text-brand-teal-light leading-relaxed max-w-sm">
               Empowering Community Health Volunteers with gamified training and data-driven tools.
             </p>
@@ -20,9 +20,15 @@ const Footer = () => {
           <div className="md:col-span-3 md:col-start-7">
             <h4 className="font-display font-semibold text-sm tracking-wider uppercase text-brand-teal-light mb-4">Navigate</h4>
             <div className="flex flex-col gap-3">
-              {['Problem', 'Solution', 'Features', 'Team'].map((link) => (
-                <a key={link} href={`#${link.toLowerCase()}`} className="text-white/70 hover:text-brand-gold transition-colors text-[15px]">
-                  {link}
+              {[
+                { label: 'Problem', href: '/#problem' },
+                { label: 'Solution', href: '/#solution' },
+                { label: 'Features', href: '/#features' },
+                { label: 'Visits', href: '/visits' },
+                { label: 'Team', href: '/#team' },
+              ].map((link) => (
+                <a key={link.label} href={link.href} className="text-white/70 hover:text-brand-gold transition-colors text-[15px]">
+                  {link.label}
                 </a>
               ))}
             </div>

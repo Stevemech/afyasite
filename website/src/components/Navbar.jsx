@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { motion, useScroll, useMotionValueEvent, AnimatePresence } from 'framer-motion';
 import { Menu, X, ArrowUpRight } from 'lucide-react';
 import logoImg from '../assets/logo.png';
 
 const Navbar = () => {
+  const location = useLocation();
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { scrollY } = useScroll();
@@ -13,10 +15,11 @@ const Navbar = () => {
   });
 
   const navLinks = [
-    { name: 'Problem', href: '#problem' },
-    { name: 'Solution', href: '#solution' },
-    { name: 'Features', href: '#features' },
-    { name: 'Team', href: '#team' },
+    { name: 'Problem', to: '/#problem' },
+    { name: 'Solution', to: '/#solution' },
+    { name: 'Features', to: '/#features' },
+    { name: 'Visits', to: '/visits' },
+    { name: 'Team', to: '/#team' },
   ];
 
   return (
@@ -33,29 +36,34 @@ const Navbar = () => {
       >
         <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
           <div className="flex items-center justify-between">
-            <motion.div
-              className="flex-shrink-0 cursor-pointer"
-              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <img
-                src={logoImg}
-                alt="AfyaQuest"
-                className={`rounded-full transition-all duration-500 ${isScrolled ? 'h-9 w-9' : 'h-11 w-11'} object-cover`}
-              />
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <Link
+                to="/"
+                onClick={() => {
+                  if (location.pathname === '/') {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }
+                }}
+                className="flex-shrink-0 block"
+              >
+                <img
+                  src={logoImg}
+                  alt="AfyaQuest"
+                  className={`rounded-full transition-all duration-500 ${isScrolled ? 'h-9 w-9' : 'h-11 w-11'} object-cover`}
+                />
+              </Link>
             </motion.div>
 
             <div className="hidden md:flex items-center gap-1">
               {navLinks.map((link) => (
-                <a
+                <Link
                   key={link.name}
-                  href={link.href}
+                  to={link.to}
                   className="relative px-4 py-2 text-[15px] font-medium text-brand-teal-dark/70 hover:text-brand-teal-dark transition-colors group"
                 >
                   {link.name}
                   <span className="absolute bottom-0.5 left-4 right-4 h-[2px] bg-brand-gold scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300" />
-                </a>
+                </Link>
               ))}
               <a
                 href="https://stevemech.github.io/AfyaQuestMobile/login"
@@ -96,17 +104,20 @@ const Navbar = () => {
               className="flex flex-col gap-2"
             >
               {navLinks.map((link, idx) => (
-                <motion.a
+                <motion.div
                   key={link.name}
-                  href={link.href}
-                  onClick={() => setMobileMenuOpen(false)}
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: idx * 0.05 }}
-                  className="text-2xl font-display font-semibold text-brand-teal-dark py-3 border-b border-gray-200 hover:text-brand-teal transition-colors"
                 >
-                  {link.name}
-                </motion.a>
+                  <Link
+                    to={link.to}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="block text-2xl font-display font-semibold text-brand-teal-dark py-3 border-b border-gray-200 hover:text-brand-teal transition-colors"
+                  >
+                    {link.name}
+                  </Link>
+                </motion.div>
               ))}
               <a
                 href="https://stevemech.github.io/AfyaQuestMobile/login"
