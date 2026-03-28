@@ -25,46 +25,28 @@ const Hero = () => {
           />
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-        >
-          <span className="inline-block py-1.5 px-5 rounded-full bg-brand-teal-dark/8 text-brand-teal-dark text-sm font-semibold mb-8 border border-brand-teal-dark/10">
-            Social Impact Track
-          </span>
-        </motion.div>
-
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.8, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
           className="text-[2.75rem] md:text-[4.25rem] lg:text-[5rem] font-display font-extrabold text-brand-teal-dark leading-[1.05] tracking-tight mb-8"
         >
-          Transforming{' '}
-          <br className="hidden md:block" />
-          <span className="relative inline-block">
-            <span className="relative z-10">Community Healthcare</span>
-            <span className="absolute -bottom-1 left-0 right-0 h-[0.35em] bg-brand-gold/40 -z-0 rounded-full" />
-          </span>{' '}
-          <br className="hidden md:block" />
-          Training
+          AfyaQuest
         </motion.h1>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.8, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
           className="text-lg md:text-xl text-gray-500 mb-10 max-w-2xl mx-auto leading-relaxed"
         >
-          A gamified learning platform empowering Community Health Volunteers
-          through interactive training and data-driven healthcare delivery.
+          Supporting community health workers through learning, care, and follow-through
         </motion.p>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.45, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.8, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
           className="flex flex-col sm:flex-row gap-4 justify-center items-center"
         >
           <a
