@@ -25,3 +25,6 @@ dist-ssr
 
 # Full-resolution originals (web-optimized copies live in public/visits/)
 AQ Guatemala Field Visit Pictures/
+
+# Local venv for image scripts (scripts/crop_team_headshots.py)
+.venv-crop/
