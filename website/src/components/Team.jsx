@@ -7,7 +7,7 @@ const founders = [
   {
     name: 'Angella',
     role: 'Co-founder',
-    photo: '/team/angella.jpg',
+    photo: null,
     initials: 'An',
   },
 ];
@@ -17,7 +17,7 @@ const heads = [
   {
     name: 'Alyse',
     role: 'R&D Head',
-    photo: '/team/alyse.jpg',
+    photo: null,
     initials: 'Al',
   },
   {

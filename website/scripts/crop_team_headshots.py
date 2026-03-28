@@ -4,9 +4,7 @@
 Portrait photos: square crop using full width, slightly biased toward the top
 (better for full-body / wide shots). Landscape: centered square.
 
-Angella / Alyse: repo had no files named angella/alyse; we map from form uploads:
-  angella.jpg  <- IMG_7622 - Rebecca He.jpg
-  alyse.jpg    <- Screenshot Aadya.webp
+Angella and Alyse use placeholders on the site (no generated assets).
 
 If a mapping is wrong, replace the source path below or drop files directly into public/team/.
 """
@@ -27,8 +25,6 @@ JOBS: list[tuple[str, str]] = [
     ("medha pulluru.jpg", "medha.jpg"),
     ("IMG_4667 - Sumita Dantu.jpeg", "sumita.jpg"),
     ("riceheadshot-7254-Edit-Edit - Steve Zhang.jpg", "steve.jpg"),
-    ("IMG_7622 - Rebecca He.jpg", "angella.jpg"),
-    ("Screenshot+2025-09-28+at+11.30.02 PM - Aadya.webp", "alyse.jpg"),
 ]
 
 
