@@ -50,14 +50,14 @@ const Hero = () => {
           className="flex flex-col sm:flex-row gap-5 md:gap-6 justify-center items-center"
         >
           <a
-            href="/#solution"
+            href="#solution"
             className="group flex items-center gap-3 bg-brand-teal-dark hover:bg-brand-teal text-white px-10 md:px-12 py-4 md:py-[1.125rem] rounded-full text-lg font-semibold transition-all duration-300 shadow-xl shadow-brand-teal-dark/25 hover:shadow-2xl hover:shadow-brand-teal-dark/30 min-w-[12rem] justify-center"
           >
             <Play size={22} fill="currentColor" className="group-hover:scale-110 transition-transform" />
             Watch Demo
           </a>
           <a
-            href="/#problem"
+            href="#problem"
             className="group flex items-center gap-3 text-brand-teal-dark border-2 border-brand-teal-dark/25 hover:border-brand-teal-dark bg-white px-10 md:px-12 py-4 md:py-[1.125rem] rounded-full text-lg font-semibold transition-all duration-300 shadow-md shadow-brand-teal-dark/5 hover:shadow-lg min-w-[12rem] justify-center"
           >
             Learn More

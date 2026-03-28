@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { SectionLink } from './SectionLink';
 import { motion, useScroll, useMotionValueEvent, AnimatePresence } from 'framer-motion';
 import { Menu, X, ArrowUpRight } from 'lucide-react';
 import logoImg from '../assets/logo.png';
@@ -15,11 +16,11 @@ const Navbar = () => {
   });
 
   const navLinks = [
-    { name: 'Problem', to: '/#problem' },
-    { name: 'Solution', to: '/#solution' },
-    { name: 'Features', to: '/#features' },
+    { name: 'Problem', sectionId: 'problem' },
+    { name: 'Solution', sectionId: 'solution' },
+    { name: 'Features', sectionId: 'features' },
     { name: 'Visits', to: '/visits' },
-    { name: 'Team', to: '/#team' },
+    { name: 'Team', sectionId: 'team' },
   ];
 
   return (
@@ -55,16 +56,27 @@ const Navbar = () => {
             </motion.div>
 
             <div className="hidden md:flex items-center gap-1">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.name}
-                  to={link.to}
-                  className="relative px-4 py-2 text-[15px] font-medium text-brand-teal-dark/70 hover:text-brand-teal-dark transition-colors group"
-                >
-                  {link.name}
-                  <span className="absolute bottom-0.5 left-4 right-4 h-[2px] bg-brand-gold scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300" />
-                </Link>
-              ))}
+              {navLinks.map((link) =>
+                link.to ? (
+                  <Link
+                    key={link.name}
+                    to={link.to}
+                    className="relative px-4 py-2 text-[15px] font-medium text-brand-teal-dark/70 hover:text-brand-teal-dark transition-colors group"
+                  >
+                    {link.name}
+                    <span className="absolute bottom-0.5 left-4 right-4 h-[2px] bg-brand-gold scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300" />
+                  </Link>
+                ) : (
+                  <SectionLink
+                    key={link.name}
+                    sectionId={link.sectionId}
+                    className="relative px-4 py-2 text-[15px] font-medium text-brand-teal-dark/70 hover:text-brand-teal-dark transition-colors group"
+                  >
+                    {link.name}
+                    <span className="absolute bottom-0.5 left-4 right-4 h-[2px] bg-brand-gold scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300" />
+                  </SectionLink>
+                )
+              )}
               <a
                 href="https://stevemech.github.io/AfyaQuestMobile/login"
                 target="_blank"
@@ -110,13 +122,23 @@ const Navbar = () => {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: idx * 0.05 }}
                 >
-                  <Link
-                    to={link.to}
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="block text-2xl font-display font-semibold text-brand-teal-dark py-3 border-b border-gray-200 hover:text-brand-teal transition-colors"
-                  >
-                    {link.name}
-                  </Link>
+                  {link.to ? (
+                    <Link
+                      to={link.to}
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="block text-2xl font-display font-semibold text-brand-teal-dark py-3 border-b border-gray-200 hover:text-brand-teal transition-colors"
+                    >
+                      {link.name}
+                    </Link>
+                  ) : (
+                    <SectionLink
+                      sectionId={link.sectionId}
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="block text-2xl font-display font-semibold text-brand-teal-dark py-3 border-b border-gray-200 hover:text-brand-teal transition-colors"
+                    >
+                      {link.name}
+                    </SectionLink>
+                  )}
                 </motion.div>
               ))}
               <a
