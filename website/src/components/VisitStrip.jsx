@@ -3,41 +3,78 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight, MapPin } from 'lucide-react';
 
+const PREVIEW = '/visits/guatemala/guatemala-01.jpg';
+
 const VisitStrip = () => {
   return (
-    <aside className="relative py-10 md:py-12 px-5 sm:px-8 lg:px-10 bg-white border-y border-brand-teal/10 overflow-hidden">
-      <div className="absolute top-0 right-[12%] w-40 h-40 rounded-full border border-brand-gold/15 pointer-events-none hidden md:block" />
-      <div className="max-w-5xl mx-auto relative z-10">
+    <section
+      aria-labelledby="visit-strip-heading"
+      className="relative isolate py-14 md:py-20 lg:py-24 px-5 sm:px-8 lg:px-10 overflow-hidden"
+    >
+      <div className="absolute inset-0 bg-gradient-to-br from-brand-teal-dark via-brand-teal to-[#1a3838]" />
+      <div
+        className="absolute inset-0 opacity-[0.08]"
+        style={{
+          backgroundImage: 'radial-gradient(rgba(178,232,241,0.9) 1px, transparent 1px)',
+          backgroundSize: '28px 28px',
+        }}
+      />
+      <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-brand-gold/20 via-brand-gold to-brand-gold/20" />
+      <div className="absolute -right-20 -top-20 w-72 h-72 rounded-full bg-brand-gold/10 blur-3xl pointer-events-none" />
+      <div className="absolute -left-16 bottom-0 w-56 h-56 rounded-full bg-brand-teal-light/10 blur-3xl pointer-events-none" />
+
+      <div className="relative z-10 max-w-7xl mx-auto">
         <motion.div
-          initial={{ opacity: 0, y: 12 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-40px' }}
-          transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-          className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-5 sm:gap-8"
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+          className="flex flex-col lg:flex-row lg:items-stretch gap-10 lg:gap-12 xl:gap-16"
         >
-          <div className="flex items-start gap-4">
-            <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-brand-teal-dark/10 text-brand-teal-dark">
-              <MapPin size={22} strokeWidth={2.25} />
-            </span>
-            <div>
-              <p className="font-display font-bold text-brand-teal-dark text-lg md:text-xl tracking-tight">
-                Guatemala field visit
-              </p>
-              <p className="text-gray-600 text-[15px] md:text-base mt-1 max-w-xl leading-relaxed">
-                Photos from our time with community health teams on the ground.
-              </p>
+          <div className="relative w-full max-w-xl mx-auto lg:mx-0 lg:max-w-md xl:max-w-lg shrink-0">
+            <div className="absolute -inset-1 rounded-3xl bg-gradient-to-br from-brand-gold/50 to-brand-gold/10 blur-sm opacity-80" />
+            <div className="relative rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl shadow-black/35 ring-2 ring-white/20">
+              <img
+                src={PREVIEW}
+                alt=""
+                className="w-full aspect-[4/3] object-cover"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-brand-teal-dark/50 to-transparent pointer-events-none" />
             </div>
           </div>
-          <Link
-            to="/visits"
-            className="group inline-flex items-center justify-center gap-2 shrink-0 self-start sm:self-center bg-brand-teal-dark text-white px-6 py-3 rounded-full text-[15px] font-semibold hover:bg-brand-teal transition-colors shadow-md shadow-brand-teal-dark/15"
-          >
-            View gallery
-            <ArrowRight size={18} className="transition-transform group-hover:translate-x-0.5" />
-          </Link>
+
+          <div className="flex flex-col justify-center text-center lg:text-left flex-1 min-w-0">
+            <span className="inline-flex items-center justify-center lg:justify-start gap-2 text-brand-gold text-xs sm:text-sm font-bold tracking-[0.2em] uppercase mb-4">
+              <MapPin size={16} strokeWidth={2.5} className="shrink-0" />
+              Field visit
+            </span>
+            <h2
+              id="visit-strip-heading"
+              className="font-display font-extrabold text-white text-3xl sm:text-4xl md:text-4xl lg:text-[2.75rem] xl:text-5xl tracking-tight leading-[1.1]"
+            >
+              Guatemala
+            </h2>
+            <p className="mt-4 text-brand-teal-light text-lg sm:text-xl md:text-[1.35rem] leading-relaxed max-w-xl mx-auto lg:mx-0">
+              See photos from our time with community health teams — learning and building AfyaQuest
+              on the ground.
+            </p>
+            <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-stretch sm:items-center">
+              <Link
+                to="/visits"
+                className="group inline-flex items-center justify-center gap-2.5 bg-brand-gold text-white px-8 sm:px-10 py-4 rounded-full text-base sm:text-lg font-bold shadow-xl shadow-brand-gold/25 hover:bg-brand-gold-dark transition-colors"
+              >
+                View full gallery
+                <ArrowRight size={22} className="transition-transform group-hover:translate-x-1" />
+              </Link>
+              <span className="text-white/45 text-sm sm:text-base font-medium">
+                Open any photo for a full-screen view
+              </span>
+            </div>
+          </div>
         </motion.div>
       </div>
-    </aside>
+    </section>
   );
 };
 
