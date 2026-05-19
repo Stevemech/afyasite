@@ -19,8 +19,8 @@ const VisitStrip = () => {
           backgroundSize: '28px 28px',
         }}
       />
-      <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-brand-gold/20 via-brand-gold to-brand-gold/20" />
-      <div className="absolute -right-20 -top-20 w-72 h-72 rounded-full bg-brand-gold/10 blur-3xl pointer-events-none" />
+      <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-brand-teal-light/0 via-brand-teal-light/40 to-brand-teal-light/0" />
+      <div className="absolute -right-20 -top-20 w-72 h-72 rounded-full bg-brand-teal-light/10 blur-3xl pointer-events-none" />
       <div className="absolute -left-16 bottom-0 w-56 h-56 rounded-full bg-brand-teal-light/10 blur-3xl pointer-events-none" />
 
       <div className="relative z-10 max-w-7xl mx-auto">
@@ -32,7 +32,7 @@ const VisitStrip = () => {
           className="flex flex-col lg:flex-row lg:items-stretch gap-10 lg:gap-12 xl:gap-16"
         >
           <div className="relative w-full max-w-xl mx-auto lg:mx-0 lg:max-w-md xl:max-w-lg shrink-0">
-            <div className="absolute -inset-1 rounded-3xl bg-gradient-to-br from-brand-gold/50 to-brand-gold/10 blur-sm opacity-80" />
+            <div className="absolute -inset-1 rounded-3xl bg-gradient-to-br from-brand-teal-light/40 to-brand-teal-light/10 blur-sm opacity-80" />
             <div className="relative rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl shadow-black/35 ring-2 ring-white/20">
               <img
                 src={PREVIEW}
@@ -45,7 +45,7 @@ const VisitStrip = () => {
           </div>
 
           <div className="flex flex-col justify-center text-center lg:text-left flex-1 min-w-0">
-            <span className="inline-flex items-center justify-center lg:justify-start gap-2 text-brand-gold text-xs sm:text-sm font-bold tracking-[0.2em] uppercase mb-4">
+            <span className="inline-flex items-center justify-center lg:justify-start gap-2 text-brand-teal-light text-xs sm:text-sm font-bold tracking-[0.2em] uppercase mb-4">
               <MapPin size={16} strokeWidth={2.5} className="shrink-0" />
               Field visit
             </span>

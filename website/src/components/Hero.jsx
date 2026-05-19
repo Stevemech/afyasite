@@ -7,7 +7,7 @@ const Hero = () => {
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center px-5 sm:px-8 pt-28 pb-24 md:pt-32 md:pb-28 overflow-hidden bg-brand-surface">
       <div className="absolute top-16 right-[8%] w-[22rem] h-[22rem] md:w-[28rem] md:h-[28rem] rounded-full border border-brand-teal/10 hidden lg:block" />
-      <div className="absolute bottom-24 left-[5%] w-52 h-52 md:w-64 md:h-64 rounded-full border border-brand-gold/20 hidden lg:block" />
+      <div className="absolute bottom-24 left-[5%] w-52 h-52 md:w-64 md:h-64 rounded-full border border-brand-teal/20 hidden lg:block" />
 
       <div className="max-w-6xl mx-auto text-center z-10 relative w-full">
         <motion.div
@@ -51,7 +51,7 @@ const Hero = () => {
         >
           <a
             href="#solution"
-            className="group flex items-center gap-3 bg-brand-teal-dark hover:bg-brand-teal text-white px-10 md:px-12 py-4 md:py-[1.125rem] rounded-full text-lg font-semibold transition-all duration-300 shadow-xl shadow-brand-teal-dark/25 hover:shadow-2xl hover:shadow-brand-teal-dark/30 min-w-[12rem] justify-center"
+            className="group flex items-center gap-3 bg-brand-gold hover:bg-brand-gold-dark text-white px-10 md:px-12 py-4 md:py-[1.125rem] rounded-full text-lg font-semibold transition-all duration-300 shadow-xl shadow-brand-teal-dark/25 hover:shadow-2xl hover:shadow-brand-teal-dark/30 min-w-[12rem] justify-center"
           >
             <Play size={22} fill="currentColor" className="group-hover:scale-110 transition-transform" />
             Watch Demo

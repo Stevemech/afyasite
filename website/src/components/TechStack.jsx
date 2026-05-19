@@ -55,7 +55,7 @@ const TechStack = () => {
               transition={{ delay: idx * 0.1 }}
               className="group flex items-start gap-6 bg-brand-surface rounded-2xl p-6 md:p-8 border border-brand-teal/10 hover:border-brand-teal/25 hover:shadow-lg transition-all duration-300"
             >
-              <div className="w-12 h-12 rounded-xl bg-brand-teal-dark text-white flex items-center justify-center shrink-0 group-hover:bg-brand-gold transition-all duration-300">
+              <div className="w-12 h-12 rounded-xl bg-brand-teal-dark text-white flex items-center justify-center shrink-0 group-hover:bg-brand-teal transition-all duration-300">
                 {item.icon}
               </div>
               <div>

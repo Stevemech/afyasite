@@ -65,7 +65,7 @@ const Walkthrough = () => {
                   }`}
                 >
                   <div className={`w-[34px] h-[34px] rounded-lg flex items-center justify-center shrink-0 transition-colors duration-300 ${
-                    activeStep === idx ? 'bg-brand-gold text-white' : 'bg-gray-100 text-gray-400'
+                    activeStep === idx ? 'bg-white text-brand-teal-dark' : 'bg-gray-100 text-gray-400'
                   }`}>
                     {step.icon}
                   </div>

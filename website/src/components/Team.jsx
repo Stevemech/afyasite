@@ -47,7 +47,7 @@ function TeamMemberCard({ name, role, photo, initials, isFiller, idx }) {
             src={photo}
             alt={`Headshot of ${name}`}
             onError={() => setPhotoFailed(true)}
-            className="w-full h-full rounded-full object-cover shadow-lg ring-4 ring-brand-teal/15 group-hover:ring-brand-gold/40 transition-[box-shadow,ring-color] duration-300"
+            className="w-full h-full rounded-full object-cover shadow-lg ring-4 ring-brand-teal/15 group-hover:ring-brand-teal/40 transition-[box-shadow,ring-color] duration-300"
           />
         ) : (
           <div

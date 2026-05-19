@@ -47,9 +47,9 @@ const Roadmap = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.08 }}
-              className="group flex items-start gap-5 bg-white rounded-2xl p-6 md:p-7 border border-brand-teal/10 hover:border-brand-gold/30 hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5"
+              className="group flex items-start gap-5 bg-white rounded-2xl p-6 md:p-7 border border-brand-teal/10 hover:border-brand-teal/30 hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5"
             >
-              <div className="w-10 h-10 rounded-xl bg-brand-gold text-white flex items-center justify-center shrink-0 group-hover:bg-brand-gold-dark transition-all duration-300">
+              <div className="w-10 h-10 rounded-xl bg-brand-teal-dark text-white flex items-center justify-center shrink-0 group-hover:bg-brand-teal transition-all duration-300">
                 {item.icon}
               </div>
               <div>

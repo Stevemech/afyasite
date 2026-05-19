@@ -38,10 +38,10 @@ const features = [
     title: 'AI Medical Assistant',
     desc: 'On-scene guidance for complex medical scenarios using a localized AI chatbot trained on health protocols.',
     span: 'md:col-span-2',
-    bg: 'bg-brand-gold',
-    text: 'text-white',
-    descColor: 'text-brand-gold-light',
-    iconBg: 'bg-brand-gold-dark text-white',
+    bg: 'bg-white',
+    text: 'text-brand-teal-dark',
+    descColor: 'text-gray-500',
+    iconBg: 'bg-brand-teal-dark text-white',
   },
 ];
 

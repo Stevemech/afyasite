@@ -35,7 +35,7 @@ const Impact = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <span className="inline-block text-brand-gold text-sm font-semibold tracking-wider uppercase mb-4">Impact</span>
+          <span className="inline-block text-brand-teal-light text-sm font-semibold tracking-wider uppercase mb-4">Impact</span>
           <h2 className="text-4xl md:text-5xl font-display font-bold text-white tracking-tight mb-5">
             Real-world impact
           </h2>
@@ -54,7 +54,7 @@ const Impact = () => {
               transition={{ delay: idx * 0.1, duration: 0.6 }}
               className="group bg-white/10 rounded-3xl p-8 lg:p-10 border border-white/10 hover:bg-white/15 transition-all duration-500"
             >
-              <div className="w-14 h-14 rounded-2xl bg-brand-gold text-white flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+              <div className="w-14 h-14 rounded-2xl bg-brand-teal text-white flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                 {item.icon}
               </div>
               <h3 className="font-display font-bold text-xl text-white mb-3">{item.title}</h3>

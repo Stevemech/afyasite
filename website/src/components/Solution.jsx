@@ -57,14 +57,14 @@ const Solution = () => {
                 {pillar.num}
               </div>
 
-              <div className="w-14 h-14 rounded-2xl bg-brand-teal-dark text-white flex items-center justify-center mb-6 group-hover:bg-brand-gold transition-all duration-500">
+              <div className="w-14 h-14 rounded-2xl bg-brand-teal-dark text-white flex items-center justify-center mb-6 group-hover:bg-brand-teal transition-all duration-500">
                 {pillar.icon}
               </div>
 
               <h3 className="font-display font-bold text-xl text-brand-teal-dark mb-3">{pillar.title}</h3>
               <p className="text-gray-500 leading-relaxed">{pillar.desc}</p>
 
-              <div className="mt-6 h-[3px] w-8 rounded-full bg-brand-gold group-hover:w-12 transition-all duration-500" />
+              <div className="mt-6 h-[3px] w-8 rounded-full bg-brand-teal group-hover:w-12 transition-all duration-500" />
             </motion.div>
           ))}
         </div>

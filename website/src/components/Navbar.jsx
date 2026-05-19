@@ -64,7 +64,7 @@ const Navbar = () => {
                     className="relative px-4 py-2 text-[15px] font-medium text-brand-teal-dark/70 hover:text-brand-teal-dark transition-colors group"
                   >
                     {link.name}
-                    <span className="absolute bottom-0.5 left-4 right-4 h-[2px] bg-brand-gold scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300" />
+                    <span className="absolute bottom-0.5 left-4 right-4 h-[2px] bg-brand-teal scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300" />
                   </Link>
                 ) : (
                   <SectionLink
@@ -73,7 +73,7 @@ const Navbar = () => {
                     className="relative px-4 py-2 text-[15px] font-medium text-brand-teal-dark/70 hover:text-brand-teal-dark transition-colors group"
                   >
                     {link.name}
-                    <span className="absolute bottom-0.5 left-4 right-4 h-[2px] bg-brand-gold scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300" />
+                    <span className="absolute bottom-0.5 left-4 right-4 h-[2px] bg-brand-teal scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300" />
                   </SectionLink>
                 )
               )}

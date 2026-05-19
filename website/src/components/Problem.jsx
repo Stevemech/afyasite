@@ -37,14 +37,14 @@ const Problem = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           >
-            <span className="inline-block text-brand-gold text-sm font-semibold tracking-wider uppercase mb-4">The Challenge</span>
+            <span className="inline-block text-white text-sm font-semibold tracking-wider uppercase mb-4">The Challenge</span>
             <h2 className="text-4xl md:text-5xl font-display font-bold text-white leading-tight tracking-tight mb-6">
               Community health workers need better tools
             </h2>
 
-            <div className="flex items-start gap-3 bg-brand-gold/10 border border-brand-gold/20 rounded-2xl p-5 mb-10">
-              <AlertTriangle className="text-brand-gold shrink-0 mt-0.5" size={22} />
-              <p className="text-brand-gold-light text-[15px] leading-relaxed font-medium">
+            <div className="flex items-start gap-3 bg-white/10 border border-white/20 rounded-2xl p-5 mb-10">
+              <AlertTriangle className="text-whitalsoe shrink-0 mt-0.5" size={22} />
+              <p className="text-white text-[15px] leading-relaxed font-medium">
                 CHVs are unpaid first responders — the EMT-equivalent serving communities with minimal support.
               </p>
             </div>
@@ -79,7 +79,7 @@ const Problem = () => {
             className="relative"
           >
             <div className="relative bg-white/5 backdrop-blur-sm rounded-3xl border border-white/10 p-10 md:p-12">
-              <div className="absolute -top-3 -right-3 w-20 h-20 bg-brand-gold/20 rounded-full blur-2xl" />
+              <div className="absolute -top-3 -right-3 w-20 h-20 bg-brand-teal-light/20 rounded-full blur-2xl" />
               <div className="absolute -bottom-4 -left-4 w-24 h-24 bg-brand-teal-light/10 rounded-full blur-2xl" />
 
               <div className="relative space-y-6">
@@ -89,8 +89,8 @@ const Problem = () => {
                 </div>
 
                 <div className="flex justify-center">
-                  <div className="w-8 h-8 rounded-full bg-brand-gold/20 flex items-center justify-center">
-                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className="text-brand-gold">
+                  <div className="w-8 h-8 rounded-full bg-white/15 flex items-center justify-center">
+                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className="text-white">
                       <path d="M6 1v10m0 0l-4-4m4 4l4-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                     </svg>
                   </div>

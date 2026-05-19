@@ -30,11 +30,11 @@ const Footer = () => {
                 { label: 'Team', sectionId: 'team' },
               ].map((link) =>
                 link.to ? (
-                  <Link key={link.label} to={link.to} className="text-white/70 hover:text-brand-gold transition-colors text-[15px]">
+                  <Link key={link.label} to={link.to} className="text-white/70 hover:text-white transition-colors text-[15px]">
                     {link.label}
                   </Link>
                 ) : (
-                  <SectionLink key={link.label} sectionId={link.sectionId} className="text-white/70 hover:text-brand-gold transition-colors text-[15px]">
+                  <SectionLink key={link.label} sectionId={link.sectionId} className="text-white/70 hover:text-white transition-colors text-[15px]">
                     {link.label}
                   </SectionLink>
                 )
@@ -45,13 +45,13 @@ const Footer = () => {
           <div className="md:col-span-3">
             <h4 className="font-display font-semibold text-sm tracking-wider uppercase text-brand-teal-light mb-4">Connect</h4>
             <div className="flex flex-col gap-3">
-              <a href="#" className="inline-flex items-center gap-2 text-white/70 hover:text-brand-gold transition-colors text-[15px]">
+              <a href="#" className="inline-flex items-center gap-2 text-white/70 hover:text-white transition-colors text-[15px]">
                 <ExternalLink size={16} /> Devpost <ArrowUpRight size={12} />
               </a>
-              <a href="#" className="inline-flex items-center gap-2 text-white/70 hover:text-brand-gold transition-colors text-[15px]">
+              <a href="#" className="inline-flex items-center gap-2 text-white/70 hover:text-white transition-colors text-[15px]">
                 <Github size={16} /> GitHub <ArrowUpRight size={12} />
               </a>
-              <a href="#" className="inline-flex items-center gap-2 text-white/70 hover:text-brand-gold transition-colors text-[15px]">
+              <a href="#" className="inline-flex items-center gap-2 text-white/70 hover:text-white transition-colors text-[15px]">
                 <Mail size={16} /> Contact
               </a>
             </div>

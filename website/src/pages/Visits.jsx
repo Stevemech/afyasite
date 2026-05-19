@@ -57,7 +57,7 @@ function Visits() {
 
       <main className="relative overflow-hidden">
         <div className="absolute top-24 right-[10%] w-72 h-72 rounded-full border border-brand-teal/10 hidden lg:block" />
-        <div className="absolute bottom-40 left-[6%] w-48 h-48 rounded-full border border-brand-gold/15 hidden lg:block" />
+        <div className="absolute bottom-40 left-[6%] w-48 h-48 rounded-full border border-brand-teal/15 hidden lg:block" />
 
         <div className="relative z-10 max-w-6xl mx-auto px-5 sm:px-8 lg:px-10 pt-28 pb-16 md:pt-32 md:pb-20">
           <motion.div
@@ -67,7 +67,7 @@ function Visits() {
             className="text-center max-w-3xl mx-auto mb-14 md:mb-16"
           >
             <span className="inline-flex items-center gap-2 text-brand-teal text-sm font-semibold tracking-wider uppercase mb-5">
-              <MapPin size={16} strokeWidth={2.5} className="text-brand-gold" />
+              <MapPin size={16} strokeWidth={2.5} className="text-brand-teal" />
               Field visits
             </span>
             <h1 className="section-heading text-brand-teal-dark mb-5">Guatemala</h1>
@@ -88,7 +88,7 @@ function Visits() {
                 <button
                   type="button"
                   onClick={() => setLightbox(idx)}
-                  className="group w-full text-left rounded-2xl overflow-hidden border border-brand-teal/10 bg-white shadow-md shadow-brand-teal-dark/5 transition-all duration-300 hover:border-brand-gold/35 hover:shadow-xl hover:shadow-brand-teal-dark/10 hover:-translate-y-0.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold focus-visible:ring-offset-2"
+                  className="group w-full text-left rounded-2xl overflow-hidden border border-brand-teal/10 bg-white shadow-md shadow-brand-teal-dark/5 transition-all duration-300 hover:border-brand-teal/35 hover:shadow-xl hover:shadow-brand-teal-dark/10 hover:-translate-y-0.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-teal focus-visible:ring-offset-2"
                 >
                   <div className="aspect-[4/3] overflow-hidden bg-brand-teal/5">
                     <img
@@ -136,7 +136,7 @@ function Visits() {
               <button
                 type="button"
                 onClick={() => setLightbox(null)}
-                className="absolute top-3 right-3 md:-top-2 md:-right-2 p-2 rounded-full bg-white/95 text-brand-teal-dark hover:bg-brand-gold hover:text-white transition-colors shadow-lg"
+                className="absolute top-3 right-3 md:-top-2 md:-right-2 p-2 rounded-full bg-white/95 text-brand-teal-dark hover:bg-brand-teal-dark hover:text-white transition-colors shadow-lg"
                 aria-label="Close"
               >
                 <X size={22} strokeWidth={2.5} />
@@ -147,7 +147,7 @@ function Visits() {
                   e.stopPropagation();
                   goPrev();
                 }}
-                className="absolute left-1 top-1/2 -translate-y-1/2 md:left-0 md:-translate-x-full p-2 rounded-full bg-white/95 text-brand-teal-dark hover:bg-brand-gold hover:text-white transition-colors shadow-lg"
+                className="absolute left-1 top-1/2 -translate-y-1/2 md:left-0 md:-translate-x-full p-2 rounded-full bg-white/95 text-brand-teal-dark hover:bg-brand-teal-dark hover:text-white transition-colors shadow-lg"
                 aria-label="Previous photo"
               >
                 <ChevronLeft size={28} strokeWidth={2.5} />
@@ -158,7 +158,7 @@ function Visits() {
                   e.stopPropagation();
                   goNext();
                 }}
-                className="absolute right-1 top-1/2 -translate-y-1/2 md:right-0 md:translate-x-full p-2 rounded-full bg-white/95 text-brand-teal-dark hover:bg-brand-gold hover:text-white transition-colors shadow-lg"
+                className="absolute right-1 top-1/2 -translate-y-1/2 md:right-0 md:translate-x-full p-2 rounded-full bg-white/95 text-brand-teal-dark hover:bg-brand-teal-dark hover:text-white transition-colors shadow-lg"
                 aria-label="Next photo"
               >
                 <ChevronRight size={28} strokeWidth={2.5} />
