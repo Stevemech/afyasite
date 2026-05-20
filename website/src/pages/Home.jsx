@@ -1,15 +1,15 @@
-  import React from 'react';
+import React from 'react';
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import Problem from '../components/Problem';
 import Solution from '../components/Solution';
-import Features from '../components/Features';
 import Walkthrough from '../components/Walkthrough';
 import Impact from '../components/Impact';
 import TechStack from '../components/TechStack';
 import Roadmap from '../components/Roadmap';
 import VisitStrip from '../components/VisitStrip';
 import Team from '../components/Team';
+import PressStrip from '../components/PressStrip';
 import Footer from '../components/Footer';
 import { useHomeHashScroll } from '../hooks/useHomeHashScroll';
 
@@ -22,9 +22,9 @@ function Home() {
 
       <main>
         <Hero />
+        <PressStrip />
         <Problem />
         <Solution />
-        <Features />
         <Walkthrough />
         <Impact />
         <TechStack />

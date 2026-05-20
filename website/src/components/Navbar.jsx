@@ -18,10 +18,16 @@ const Navbar = () => {
   const navLinks = [
     { name: 'Problem', sectionId: 'problem' },
     { name: 'Solution', sectionId: 'solution' },
-    { name: 'Features', sectionId: 'features' },
+    { name: 'Features', to: '/features' },
     { name: 'Visits', to: '/visits' },
     { name: 'Team', sectionId: 'team' },
   ];
+
+  const overHero = location.pathname === '/' && !isScrolled;
+  const linkColorClass = overHero
+    ? 'text-white/85 hover:text-white'
+    : 'text-brand-teal-dark/70 hover:text-brand-teal-dark';
+  const underlineColorClass = overHero ? 'bg-white' : 'bg-brand-teal';
 
   return (
     <>
@@ -61,19 +67,19 @@ const Navbar = () => {
                   <Link
                     key={link.name}
                     to={link.to}
-                    className="relative px-4 py-2 text-[15px] font-medium text-brand-teal-dark/70 hover:text-brand-teal-dark transition-colors group"
+                    className={`relative px-4 py-2 text-[15px] font-medium transition-colors group ${linkColorClass}`}
                   >
                     {link.name}
-                    <span className="absolute bottom-0.5 left-4 right-4 h-[2px] bg-brand-teal scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300" />
+                    <span className={`absolute bottom-0.5 left-4 right-4 h-[2px] scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300 ${underlineColorClass}`} />
                   </Link>
                 ) : (
                   <SectionLink
                     key={link.name}
                     sectionId={link.sectionId}
-                    className="relative px-4 py-2 text-[15px] font-medium text-brand-teal-dark/70 hover:text-brand-teal-dark transition-colors group"
+                    className={`relative px-4 py-2 text-[15px] font-medium transition-colors group ${linkColorClass}`}
                   >
                     {link.name}
-                    <span className="absolute bottom-0.5 left-4 right-4 h-[2px] bg-brand-teal scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300" />
+                    <span className={`absolute bottom-0.5 left-4 right-4 h-[2px] scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300 ${underlineColorClass}`} />
                   </SectionLink>
                 )
               )}
@@ -90,7 +96,11 @@ const Navbar = () => {
             <div className="md:hidden">
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="text-brand-teal-dark p-2 rounded-lg hover:bg-brand-teal/10 transition-colors"
+                className={`p-2 rounded-lg transition-colors ${
+                  overHero
+                    ? 'text-white hover:bg-white/10'
+                    : 'text-brand-teal-dark hover:bg-brand-teal/10'
+                }`}
               >
                 {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
               </button>

@@ -25,7 +25,7 @@ const Footer = () => {
               {[
                 { label: 'Problem', sectionId: 'problem' },
                 { label: 'Solution', sectionId: 'solution' },
-                { label: 'Features', sectionId: 'features' },
+                { label: 'Features', to: '/features' },
                 { label: 'Visits', to: '/visits' },
                 { label: 'Team', sectionId: 'team' },
               ].map((link) =>
