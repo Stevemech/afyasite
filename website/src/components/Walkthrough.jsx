@@ -8,30 +8,35 @@ const steps = [
     icon: <Lock size={20} />,
     title: 'Login',
     content: 'Secure authentication for individual CHV accounts with personalized progress tracking.',
+    screenshot: '/walkthrough/login.png',
   },
   {
     id: 'dashboard',
     icon: <LayoutDashboard size={20} />,
     title: 'Dashboard',
     content: 'Daily to-do list, assignment overview, household visit scheduler, daily review questions, and end-of-day reporting.',
+    screenshot: '/walkthrough/dashboard.png',
   },
   {
     id: 'learning',
     icon: <BookOpen size={20} />,
     title: 'Learning Modules',
     content: 'Digestible modules with embedded videos, comprehension quizzes, an AI chatbot for quick health questions, and a progress tracking system.',
+    screenshot: '/walkthrough/learning modules.png',
   },
   {
     id: 'map',
     icon: <Map size={20} />,
     title: 'Map Interface',
     content: 'Geographic visualization of client locations and nearby hospitals, with color-coded legends and filterable tabs by client type.',
+    screenshot: '/walkthrough/map functionality, stops.png',
   },
   {
     id: 'profile',
     icon: <User size={20} />,
     title: 'Profile & Analytics',
     content: 'Performance statistics, achievement badges, historical reports archive, dark mode, and a weekly reflection journal.',
+    screenshot: '/walkthrough/profile.png',
   },
 ];
 
@@ -100,13 +105,12 @@ const Walkthrough = () => {
                     {steps[activeStep].content}
                   </p>
 
-                  <div className="mt-auto bg-white rounded-2xl aspect-video flex items-center justify-center border-2 border-dashed border-brand-teal/15">
-                    <div className="text-center">
-                      <div className="w-12 h-12 rounded-full bg-brand-teal-dark/10 text-brand-teal-dark flex items-center justify-center mx-auto mb-2">
-                        {steps[activeStep].icon}
-                      </div>
-                      <p className="text-brand-teal-dark/40 text-sm font-medium">App Screenshot: {steps[activeStep].title}</p>
-                    </div>
+                  <div className="mt-auto bg-white rounded-2xl aspect-video overflow-hidden border border-brand-teal/10 shadow-sm">
+                    <img
+                      src={steps[activeStep].screenshot}
+                      alt={`AfyaQuest ${steps[activeStep].title} screen`}
+                      className="w-full h-full object-contain"
+                    />
                   </div>
                 </motion.div>
               </AnimatePresence>

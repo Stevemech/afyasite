@@ -18,8 +18,9 @@ const Navbar = () => {
   const navLinks = [
     { name: 'Problem', sectionId: 'problem' },
     { name: 'Solution', sectionId: 'solution' },
-    { name: 'Features', to: '/features' },
+    { name: 'Features', sectionId: 'features' },
     { name: 'Visits', to: '/visits' },
+    { name: 'Media', to: '/media' },
     { name: 'Team', sectionId: 'team' },
   ];
 

@@ -16,6 +16,32 @@ const pressItems = [
   },
 ];
 
+const GoldLeaf = ({ className }) => (
+  <svg
+    viewBox="0 0 40 40"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    className={className}
+  >
+    <path
+      d="M20 4C20 4 8 12 8 22C8 28.627 13.373 34 20 34C26.627 34 32 28.627 32 22C32 12 20 4 20 4Z"
+      fill="url(#leafGrad)"
+      opacity="0.35"
+    />
+    <path
+      d="M20 10V32"
+      stroke="rgba(255,215,0,0.3)"
+      strokeWidth="1"
+    />
+    <defs>
+      <linearGradient id="leafGrad" x1="8" y1="4" x2="32" y2="34">
+        <stop stopColor="#FFD700" />
+        <stop offset="1" stopColor="#DAA520" />
+      </linearGradient>
+    </defs>
+  </svg>
+);
+
 const PressStrip = () => {
   const featured = pressItems[0];
   if (!featured) return null;
@@ -24,35 +50,53 @@ const PressStrip = () => {
     <section
       id="press"
       aria-labelledby="press-heading"
-      className="relative py-20 md:py-24 overflow-hidden bg-brand-teal-dark"
+      className="relative py-8 md:py-10 overflow-hidden bg-brand-teal-dark"
     >
-      <div
-        className="absolute inset-0 opacity-[0.05]"
-        style={{
-          backgroundImage: 'radial-gradient(rgba(178,232,241,0.8) 1px, transparent 1px)',
-          backgroundSize: '32px 32px',
-        }}
-      />
+      {/* Decorative gold leaves */}
+      <GoldLeaf className="absolute top-4 left-[5%] w-12 h-12 hidden lg:block rotate-[-30deg]" />
+      <GoldLeaf className="absolute bottom-2 left-[12%] w-8 h-8 hidden md:block rotate-[-60deg]" />
+      <GoldLeaf className="absolute top-2 right-[8%] w-14 h-14 hidden lg:block rotate-[25deg]" />
+      <GoldLeaf className="absolute bottom-3 right-[15%] w-9 h-9 hidden md:block rotate-[45deg]" />
+
+      {/* Floating award-style leaves */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.3, duration: 0.6 }}
+        className="absolute top-3 left-[25%] hidden lg:block"
+      >
+        <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6 rotate-[-15deg]" opacity="0.3">
+          <path d="M12 2L8 8H4L8 12L6 18L12 14L18 18L16 12L20 8H16L12 2Z" fill="#FFD700" />
+        </svg>
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.4, duration: 0.6 }}
+        className="absolute bottom-2 right-[30%] hidden lg:block"
+      >
+        <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5 rotate-[20deg]" opacity="0.25">
+          <path d="M12 2L8 8H4L8 12L6 18L12 14L18 18L16 12L20 8H16L12 2Z" fill="#FFD700" />
+        </svg>
+      </motion.div>
 
       <div className="relative max-w-6xl mx-auto px-5 sm:px-8 lg:px-10">
-        <motion.h2
-          id="press-heading"
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.4 }}
-          transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
-          className="text-center text-brand-teal-light text-sm font-semibold tracking-[0.2em] uppercase mb-8 md:mb-10"
-        >
-          As Seen In
-        </motion.h2>
-
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.4 }}
-          transition={{ duration: 0.55, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
-          className="flex flex-wrap items-center justify-center gap-x-10 md:gap-x-14 gap-y-5 mb-10 md:mb-12"
+          transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+          className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 text-center"
         >
+          <span
+            id="press-heading"
+            className="text-brand-teal-light/70 text-xs font-semibold tracking-[0.2em] uppercase"
+          >
+            As Seen In
+          </span>
+
           {pressItems.map((item) =>
             item.logo ? (
               <img
@@ -60,51 +104,35 @@ const PressStrip = () => {
                 src={item.logo}
                 alt={item.outlet}
                 loading="lazy"
-                className="h-9 md:h-10 w-auto opacity-90 hover:opacity-100 transition-opacity"
+                className="h-6 w-auto opacity-90 hover:opacity-100 transition-opacity"
               />
             ) : (
               <span
                 key={item.outlet}
-                className="font-display font-bold text-white text-2xl md:text-[1.75rem] tracking-tight opacity-95"
+                className="font-display font-bold text-white text-lg tracking-tight opacity-95"
               >
                 {item.logoText}
               </span>
             )
           )}
-        </motion.div>
 
-        <motion.figure
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.6, delay: 0.16, ease: [0.22, 1, 0.36, 1] }}
-          className="text-center max-w-3xl mx-auto"
-        >
-          <blockquote className="font-display text-xl sm:text-2xl md:text-[1.5rem] text-white leading-snug">
-            <span className="text-brand-teal-light/50" aria-hidden="true">&ldquo;</span>
-            {featured.quote}
-            <span className="text-brand-teal-light/50" aria-hidden="true">&rdquo;</span>
-          </blockquote>
-          <figcaption className="mt-4 text-brand-teal-light/70 text-xs sm:text-sm tracking-[0.15em] uppercase">
-            {featured.outlet} &middot; {featured.date}
-          </figcaption>
-
-          <div className="mt-8">
+          <div className="flex items-center gap-2">
+            <span className="text-brand-teal-light/60 text-sm italic">&ldquo;{featured.quote}&rdquo;</span>
             <a
               href={featured.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center gap-2 text-white border-2 border-white/40 hover:border-white bg-white/10 hover:bg-white/20 backdrop-blur-sm px-7 py-3 rounded-full text-base font-semibold transition-colors"
+              className="group inline-flex items-center gap-1.5 text-white/80 hover:text-white text-xs font-semibold transition-colors"
             >
               Read Article
               <ArrowUpRight
-                size={18}
+                size={14}
                 strokeWidth={2.5}
                 className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
               />
             </a>
           </div>
-        </motion.figure>
+        </motion.div>
       </div>
     </section>
   );

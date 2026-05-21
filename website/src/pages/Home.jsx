@@ -4,6 +4,7 @@ import Hero from '../components/Hero';
 import Problem from '../components/Problem';
 import Solution from '../components/Solution';
 import Walkthrough from '../components/Walkthrough';
+import Features from '../components/Features';
 import Impact from '../components/Impact';
 import TechStack from '../components/TechStack';
 import Roadmap from '../components/Roadmap';
@@ -26,6 +27,7 @@ function Home() {
         <Problem />
         <Solution />
         <Walkthrough />
+        <Features />
         <Impact />
         <TechStack />
         <Roadmap />

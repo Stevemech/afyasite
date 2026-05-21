@@ -5,7 +5,7 @@ import logoImg from '../assets/logo.png';
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center px-5 sm:px-8 pt-28 pb-24 md:pt-32 md:pb-28 overflow-hidden bg-brand-teal-dark">
+    <section className="relative min-h-screen flex flex-col items-center justify-center px-5 sm:px-8 pt-28 pb-16 md:pt-32 md:pb-16 overflow-hidden bg-brand-teal-dark">
       <img
         src="/visits/guatemala/guatemala-07.jpg"
         alt=""

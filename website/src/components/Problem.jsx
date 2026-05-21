@@ -22,7 +22,7 @@ const problems = [
 
 const Problem = () => {
   return (
-    <section id="problem" className="relative py-24 md:py-32 overflow-hidden">
+    <section id="problem" className="relative py-16 md:py-20 overflow-hidden">
       <div className="absolute inset-0 bg-brand-teal-dark" />
       <div
         className="absolute inset-0 opacity-[0.04]"
