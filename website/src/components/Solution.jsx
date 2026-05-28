@@ -1,6 +1,6 @@
 import React from 'react';
 import { Target, Smartphone, BarChart2 } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { useInView } from '../hooks/useInView';
 
 const pillars = [
   {
@@ -24,16 +24,12 @@ const pillars = [
 ];
 
 const Solution = () => {
+  const [ref, isVisible] = useInView();
+
   return (
     <section id="solution" className="py-24 md:py-32 px-5 sm:px-8 lg:px-10 bg-white">
       <div className="max-w-7xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
+        <div className="text-center mb-16">
           <span className="inline-block text-brand-teal text-sm font-semibold tracking-wider uppercase mb-4">Our Approach</span>
           <h2 className="section-heading text-brand-teal-dark mb-5">
             Three pillars of impact
@@ -41,17 +37,14 @@ const Solution = () => {
           <p className="section-subheading">
             We bridge the gap with bite-sized, engaging learning experiences and powerful tools built for the field.
           </p>
-        </motion.div>
+        </div>
 
-        <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
+        <div ref={ref} className="grid md:grid-cols-3 gap-6 lg:gap-8">
           {pillars.map((pillar, idx) => (
-            <motion.div
+            <div
               key={idx}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: idx * 0.1, duration: 0.6 }}
-              className="group relative bg-brand-surface rounded-3xl p-8 lg:p-10 border border-brand-teal/10 hover:border-brand-teal/30 transition-all duration-500 hover:shadow-xl hover:shadow-brand-teal/10 hover:-translate-y-1"
+              className={`group relative bg-brand-surface rounded-3xl p-8 lg:p-10 border border-brand-teal/10 hover:border-brand-teal/30 transition-all duration-700 hover:shadow-xl hover:shadow-brand-teal/10 hover:-translate-y-1 opacity-0 translate-y-6 ${isVisible ? 'opacity-100 translate-y-0' : ''}`}
+              style={{ transitionDelay: isVisible ? `${idx * 100}ms` : '0ms' }}
             >
               <div className="absolute top-8 right-8 lg:top-10 lg:right-10 font-display text-6xl font-extrabold text-brand-teal-dark/[0.06] leading-none select-none">
                 {pillar.num}
@@ -65,7 +58,7 @@ const Solution = () => {
               <p className="text-gray-500 leading-relaxed">{pillar.desc}</p>
 
               <div className="mt-6 h-[3px] w-8 rounded-full bg-brand-teal group-hover:w-12 transition-all duration-500" />
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

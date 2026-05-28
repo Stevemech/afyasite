@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { useInView } from '../hooks/useInView';
 
 const stack = [
   {
@@ -32,28 +32,22 @@ const stack = [
 ];
 
 const TechStack = () => {
+  const [ref, isVisible] = useInView();
+
   return (
     <section className="py-24 md:py-32 px-5 sm:px-8 lg:px-10 bg-white">
       <div className="max-w-5xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
+        <div className="text-center mb-16">
           <span className="inline-block text-brand-teal text-sm font-semibold tracking-wider uppercase mb-4">Technology</span>
           <h2 className="section-heading text-brand-teal-dark">Built for the field</h2>
-        </motion.div>
+        </div>
 
-        <div className="space-y-4">
+        <div ref={ref} className="space-y-4">
           {stack.map((item, idx) => (
-            <motion.div
+            <div
               key={idx}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: idx * 0.1 }}
-              className="group flex items-start gap-6 bg-brand-surface rounded-2xl p-6 md:p-8 border border-brand-teal/10 hover:border-brand-teal/25 hover:shadow-lg transition-all duration-300"
+              className={`group flex items-start gap-6 bg-brand-surface rounded-2xl p-6 md:p-8 border border-brand-teal/10 hover:border-brand-teal/25 hover:shadow-lg transition-all duration-700 opacity-0 translate-y-6 ${isVisible ? 'opacity-100 translate-y-0' : ''}`}
+              style={{ transitionDelay: isVisible ? `${idx * 100}ms` : '0ms' }}
             >
               <div className="w-12 h-12 rounded-xl bg-brand-teal-dark text-white flex items-center justify-center shrink-0 group-hover:bg-brand-teal transition-all duration-300">
                 {item.icon}
@@ -62,7 +56,7 @@ const TechStack = () => {
                 <h3 className="font-display font-bold text-lg text-brand-teal-dark mb-1">{item.title}</h3>
                 <p className="text-gray-600 leading-relaxed">{item.desc}</p>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

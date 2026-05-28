@@ -19,6 +19,7 @@ const Navbar = () => {
     { name: 'Problem', sectionId: 'problem' },
     { name: 'Solution', sectionId: 'solution' },
     { name: 'Features', sectionId: 'features' },
+    { name: 'Walkthrough', sectionId: 'walkthrough' },
     { name: 'Visits', to: '/visits' },
     { name: 'Media', to: '/media' },
     { name: 'Team', sectionId: 'team' },

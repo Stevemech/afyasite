@@ -1,6 +1,6 @@
 import React from 'react';
 import { Award, Map, FileText, MessageCircle } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { useInView } from '../hooks/useInView';
 
 const features = [
   {
@@ -46,15 +46,12 @@ const features = [
 ];
 
 const Features = () => {
+  const [ref, isVisible] = useInView();
+
   return (
     <section id="features" className="py-24 md:py-32 px-5 sm:px-8 lg:px-10 bg-brand-surface">
       <div className="max-w-7xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
+        <div className="text-center mb-16">
           <span className="inline-block text-brand-teal text-sm font-semibold tracking-wider uppercase mb-4">Features</span>
           <h2 className="section-heading text-brand-teal-dark mb-5">
             Powering community health
@@ -62,24 +59,21 @@ const Features = () => {
           <p className="section-subheading">
             A comprehensive suite of tools supporting CHVs in their daily workflow.
           </p>
-        </motion.div>
+        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-5 auto-rows-[minmax(200px,auto)]">
+        <div ref={ref} className="grid grid-cols-1 md:grid-cols-4 gap-5 auto-rows-[minmax(200px,auto)]">
           {features.map((f, idx) => (
-            <motion.div
+            <div
               key={idx}
-              initial={{ opacity: 0, y: 25 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: idx * 0.08, duration: 0.5 }}
-              className={`${f.span} ${f.bg} rounded-3xl p-8 lg:p-10 group hover:shadow-2xl transition-all duration-500 hover:-translate-y-1`}
+              className={`${f.span} ${f.bg} rounded-3xl p-8 lg:p-10 group hover:shadow-2xl transition-all duration-700 hover:-translate-y-1 opacity-0 translate-y-6 ${isVisible ? 'opacity-100 translate-y-0' : ''}`}
+              style={{ transitionDelay: isVisible ? `${idx * 80}ms` : '0ms' }}
             >
               <div className={`w-12 h-12 rounded-2xl ${f.iconBg} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
                 {f.icon}
               </div>
               <h3 className={`font-display font-bold text-xl lg:text-2xl mb-3 ${f.text}`}>{f.title}</h3>
               <p className={`${f.descColor} leading-relaxed`}>{f.desc}</p>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

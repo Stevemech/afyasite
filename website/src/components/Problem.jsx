@@ -31,12 +31,7 @@ const Problem = () => {
 
       <div className="relative max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          >
+          <div>
             <span className="inline-block text-white text-sm font-semibold tracking-wider uppercase mb-4">The Challenge</span>
             <h2 className="text-4xl md:text-5xl font-display font-bold text-white leading-tight tracking-tight mb-6">
               Community health workers need better tools
@@ -53,10 +48,10 @@ const Problem = () => {
               {problems.map((item, idx) => (
                 <motion.div
                   key={idx}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: 0.1 + idx * 0.1, duration: 0.5 }}
+                  transition={{ delay: idx * 0.1, duration: 0.5 }}
                   className="flex items-start gap-4 group"
                 >
                   <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center text-brand-teal-light shrink-0 group-hover:bg-white/15 transition-colors">
@@ -69,13 +64,13 @@ const Problem = () => {
                 </motion.div>
               ))}
             </div>
-          </motion.div>
+          </div>
 
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.7, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
             className="relative"
           >
             <div className="relative bg-white/5 backdrop-blur-sm rounded-3xl border border-white/10 p-10 md:p-12">
