@@ -1,8 +1,10 @@
 import { useRef, useEffect, useCallback, useState } from 'react';
+import { IN_PAGE_NAVIGATE_EVENT } from '../lib/inPageScroll';
 
 const WHEEL_STEP_THRESHOLD = 90;
 const STEP_COOLDOWN_MS = 380;
 const RELOCK_COOLDOWN_MS = 700;
+const NAVIGATION_COOLDOWN_MS = 1400;
 const TOUCH_THRESHOLD_PX = 45;
 
 const isCoarsePointer = () =>
@@ -85,7 +87,7 @@ export function useScrollLock(totalSteps) {
       releaseBodyLock();
       setIsLocked(false);
 
-      if (!el) return;
+      if (!el || !direction) return;
 
       const target =
         direction === 'down'
@@ -98,6 +100,27 @@ export function useScrollLock(totalSteps) {
     },
     [releaseBodyLock],
   );
+
+  // Step aside when something else (navbar link, logo, etc.) is performing
+  // a programmatic in-page scroll. Release any active lock without snapping,
+  // and suppress re-locking until the smooth scroll has had time to settle.
+  useEffect(() => {
+    const handleInPageNavigate = () => {
+      cooldownUntil.current = Math.max(
+        cooldownUntil.current,
+        Date.now() + NAVIGATION_COOLDOWN_MS,
+      );
+      if (isLockedRef.current) {
+        isLockedRef.current = false;
+        releaseBodyLock();
+        setIsLocked(false);
+      }
+    };
+
+    window.addEventListener(IN_PAGE_NAVIGATE_EVENT, handleInPageNavigate);
+    return () =>
+      window.removeEventListener(IN_PAGE_NAVIGATE_EVENT, handleInPageNavigate);
+  }, [releaseBodyLock]);
 
   // Direction-aware lock trigger: detect crossing of section top through viewport top.
   useEffect(() => {

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { SectionLink } from './SectionLink';
+import { scrollToTop } from '../lib/inPageScroll';
 import { motion, useScroll, useMotionValueEvent, AnimatePresence } from 'framer-motion';
 import { Menu, X, ArrowUpRight } from 'lucide-react';
 import logoImg from '../assets/logo.png';
@@ -48,9 +49,10 @@ const Navbar = () => {
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Link
                 to="/"
-                onClick={() => {
+                onClick={(e) => {
                   if (location.pathname === '/') {
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                    e.preventDefault();
+                    scrollToTop();
                   }
                 }}
                 className="flex-shrink-0 block"

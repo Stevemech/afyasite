@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import { scrollToSection } from '../lib/inPageScroll';
 
 /**
  * After navigating to /#section from another route, scroll the target into view once DOM is ready.
@@ -13,7 +14,7 @@ export function useHomeHashScroll() {
     if (!id) return;
 
     const t = window.setTimeout(() => {
-      document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      scrollToSection(id);
     }, 80);
 
     return () => clearTimeout(t);

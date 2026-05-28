@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { scrollToSection } from '../lib/inPageScroll';
 
 /**
  * In-page section links that work with React Router: smooth-scroll on the home page,
@@ -17,10 +18,7 @@ export function SectionLink({ sectionId, className, children, onClick }) {
         if (e.defaultPrevented) return;
         if (location.pathname === '/') {
           e.preventDefault();
-          const el = document.getElementById(sectionId);
-          if (el) {
-            el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          }
+          scrollToSection(sectionId);
           window.history.replaceState(null, '', `#${sectionId}`);
         }
       }}
