@@ -52,7 +52,7 @@ const Footer = () => {
               <a href="#" className="inline-flex items-center gap-2 text-white/70 hover:text-white transition-colors text-[15px]">
                 <Github size={16} /> GitHub <ArrowUpRight size={12} />
               </a>
-              <a href="#" className="inline-flex items-center gap-2 text-white/70 hover:text-white transition-colors text-[15px]">
+              <a href="mailto:afyaquest@gmail.com" className="inline-flex items-center gap-2 text-white/70 hover:text-white transition-colors text-[15px]">
                 <Mail size={16} /> Contact
               </a>
             </div>

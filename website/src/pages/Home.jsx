@@ -11,6 +11,7 @@ import Roadmap from '../components/Roadmap';
 import VisitStrip from '../components/VisitStrip';
 import Team from '../components/Team';
 import PressStrip from '../components/PressStrip';
+import ContactCTA from '../components/ContactCTA';
 import Footer from '../components/Footer';
 import { useHomeHashScroll } from '../hooks/useHomeHashScroll';
 
@@ -35,6 +36,7 @@ function Home() {
         <Team />
       </main>
 
+      <ContactCTA />
       <Footer />
     </div>
   );

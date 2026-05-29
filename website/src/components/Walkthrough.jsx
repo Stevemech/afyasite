@@ -8,7 +8,7 @@ import {
   User,
   ArrowDown,
 } from 'lucide-react';
-import { useScrollLock } from '../hooks/useScrollLock';
+import { useScrollSteps } from '../hooks/useScrollSteps';
 
 const steps = [
   {
@@ -55,10 +55,13 @@ const steps = [
 
 const EASE = [0.22, 1, 0.36, 1];
 
+// Scroll distance (in viewport heights) the panel dwells on each step while
+// pinned. Track height = one viewport for the pin + one segment per step.
+const STEP_SCROLL_VH = 75;
+
 const Walkthrough = () => {
   const totalSteps = steps.length;
-  const { sectionRef, isLocked, activeStep, setActiveStep } =
-    useScrollLock(totalSteps);
+  const { trackRef, activeStep, selectStep } = useScrollSteps(totalSteps);
 
   const ActiveIcon = steps[activeStep].icon;
   const progress = ((activeStep + 1) / totalSteps) * 100;
@@ -66,15 +69,12 @@ const Walkthrough = () => {
   return (
     <section
       id="walkthrough"
-      ref={sectionRef}
-      className="relative bg-white lg:h-screen"
+      ref={trackRef}
+      style={{ '--wt-track': `${100 + totalSteps * STEP_SCROLL_VH}vh` }}
+      className="relative bg-white lg:h-[var(--wt-track)]"
     >
       <div
-        className={`${
-          isLocked
-            ? 'fixed inset-0 z-40'
-            : 'relative lg:absolute lg:inset-0 z-20'
-        } flex flex-col bg-gradient-to-br from-white via-brand-surface/40 to-white overflow-hidden`}
+        className="relative lg:sticky lg:top-0 lg:h-screen z-20 flex flex-col bg-gradient-to-br from-white via-brand-surface/40 to-white overflow-hidden"
       >
         {/* Decorative blobs */}
         <div
@@ -135,7 +135,7 @@ const Walkthrough = () => {
                     >
                       <button
                         type="button"
-                        onClick={() => setActiveStep(idx)}
+                        onClick={() => selectStep(idx)}
                         aria-current={isActive ? 'step' : undefined}
                         className={`relative w-full flex items-center gap-3 lg:gap-4 px-3 lg:px-4 py-2.5 lg:py-3 rounded-2xl text-left transition-colors duration-300 ${
                           isActive
@@ -256,20 +256,7 @@ const Walkthrough = () => {
               <ArrowDown size={13} strokeWidth={2.5} />
             </motion.span>
             <span className="font-medium tracking-wide">
-              Scroll to navigate ·{' '}
-              <kbd className="px-1.5 py-0.5 rounded border border-brand-teal-dark/15 bg-white/70 text-[11px] font-mono">
-                ↑↓
-              </kbd>{' '}
-              arrow keys
-              {isLocked && (
-                <>
-                  {' '}·{' '}
-                  <kbd className="px-1.5 py-0.5 rounded border border-brand-teal-dark/15 bg-white/70 text-[11px] font-mono">
-                    Esc
-                  </kbd>{' '}
-                  to exit
-                </>
-              )}
+              Keep scrolling to explore each step
             </span>
           </div>
         </div>
