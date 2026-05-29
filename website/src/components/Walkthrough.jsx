@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   Lock,
@@ -65,6 +65,15 @@ const Walkthrough = () => {
 
   const ActiveIcon = steps[activeStep].icon;
   const progress = ((activeStep + 1) / totalSteps) * 100;
+
+  // Warm the browser cache with every step screenshot on mount so swapping
+  // steps shows the next image instantly instead of fetching mid-scroll.
+  useEffect(() => {
+    steps.forEach((step) => {
+      const img = new Image();
+      img.src = step.screenshot;
+    });
+  }, []);
 
   return (
     <section
