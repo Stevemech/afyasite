@@ -26,11 +26,8 @@ const Navbar = () => {
     { name: 'Team', sectionId: 'team' },
   ];
 
-  const overHero = location.pathname === '/' && !isScrolled;
-  const linkColorClass = overHero
-    ? 'text-white/85 hover:text-white'
-    : 'text-brand-teal-dark/70 hover:text-brand-teal-dark';
-  const underlineColorClass = overHero ? 'bg-white' : 'bg-brand-teal';
+  const linkColorClass = 'text-brand-teal-dark/75 hover:text-brand-teal-dark';
+  const underlineColorClass = 'bg-brand-teal';
 
   return (
     <>
@@ -41,7 +38,7 @@ const Navbar = () => {
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           isScrolled
             ? 'py-3 bg-white/90 backdrop-blur-xl shadow-sm'
-            : 'py-5 bg-transparent'
+            : 'py-5 bg-white/40 bg-gradient-to-b from-white/40 via-white/15 to-transparent backdrop-blur-md'
         }`}
       >
         <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
@@ -60,7 +57,9 @@ const Navbar = () => {
                 <img
                   src={logoImg}
                   alt="AfyaQuest"
-                  className={`rounded-full transition-all duration-500 ${isScrolled ? 'h-9 w-9' : 'h-11 w-11'} object-cover`}
+                  className={`rounded-full transition-all duration-500 object-cover ring-2 ${
+                    isScrolled ? 'h-14 w-14 ring-brand-teal/20' : 'h-16 w-16 ring-white/40 shadow-lg shadow-black/20'
+                  }`}
                 />
               </Link>
             </motion.div>
@@ -100,11 +99,7 @@ const Navbar = () => {
             <div className="md:hidden">
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className={`p-2 rounded-lg transition-colors ${
-                  overHero
-                    ? 'text-white hover:bg-white/10'
-                    : 'text-brand-teal-dark hover:bg-brand-teal/10'
-                }`}
+                className="p-2 rounded-lg transition-colors text-brand-teal-dark hover:bg-brand-teal/10"
               >
                 {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
               </button>

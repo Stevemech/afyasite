@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   Lock,
@@ -55,6 +55,15 @@ const steps = [
 
 const EASE = [0.22, 1, 0.36, 1];
 
+// Vertical "scroll" transition for the phone screenshot: the incoming screen
+// slides in from below (or above when stepping back) while the outgoing one
+// slides off in the same direction, like scrolling a reel of screens.
+const screenVariants = {
+  enter: (dir) => ({ y: dir >= 0 ? '100%' : '-100%' }),
+  center: { y: '0%' },
+  exit: (dir) => ({ y: dir >= 0 ? '-100%' : '100%' }),
+};
+
 // Scroll distance (in viewport heights) the panel dwells on each step while
 // pinned. Track height = one viewport for the pin + one segment per step.
 const STEP_SCROLL_VH = 75;
@@ -65,6 +74,13 @@ const Walkthrough = () => {
 
   const ActiveIcon = steps[activeStep].icon;
   const progress = ((activeStep + 1) / totalSteps) * 100;
+
+  // Track step direction so the phone screenshot slides the correct way.
+  const prevStep = useRef(activeStep);
+  const direction = activeStep >= prevStep.current ? 1 : -1;
+  useEffect(() => {
+    prevStep.current = activeStep;
+  }, [activeStep]);
 
   // Warm the browser cache with every step screenshot on mount so swapping
   // steps shows the next image instantly instead of fetching mid-scroll.
@@ -233,13 +249,15 @@ const Walkthrough = () => {
                       className="absolute left-1/2 top-2 -translate-x-1/2 h-1 w-12 rounded-full bg-white/15 z-10"
                     />
                     <div className="relative h-full w-full rounded-[2rem] overflow-hidden bg-white">
-                      <AnimatePresence mode="wait">
+                      <AnimatePresence initial={false} custom={direction}>
                         <motion.img
                           key={`img-${activeStep}`}
-                          initial={{ opacity: 0, scale: 1.04 }}
-                          animate={{ opacity: 1, scale: 1 }}
-                          exit={{ opacity: 0, scale: 0.97 }}
-                          transition={{ duration: 0.45, ease: EASE }}
+                          custom={direction}
+                          variants={screenVariants}
+                          initial="enter"
+                          animate="center"
+                          exit="exit"
+                          transition={{ duration: 0.6, ease: EASE }}
                           src={steps[activeStep].screenshot}
                           alt={`AfyaQuest ${steps[activeStep].title} screen`}
                           draggable={false}
