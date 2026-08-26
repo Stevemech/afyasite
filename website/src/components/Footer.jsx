@@ -9,7 +9,7 @@ const Footer = () => {
     <footer className="bg-brand-teal-dark text-white">
       <div className="max-w-7xl mx-auto px-6 py-16 md:py-20">
         <div className="grid md:grid-cols-12 gap-12 md:gap-8">
-          <div className="md:col-span-5">
+          <div className="md:col-span-4">
             <Link to="/" className="flex items-center gap-4 mb-6 w-fit hover:opacity-90 transition-opacity">
               <img src={logoImg} alt="AfyaQuest" className="h-14 w-14 rounded-full object-cover" />
               <span className="font-display text-2xl font-bold tracking-tight">AfyaQuest</span>
@@ -19,7 +19,7 @@ const Footer = () => {
             </p>
           </div>
 
-          <div className="md:col-span-3 md:col-start-7">
+          <div className="md:col-span-3 md:col-start-6">
             <h4 className="font-display font-semibold text-sm tracking-wider uppercase text-brand-teal-light mb-4">Navigate</h4>
             <div className="flex flex-col gap-3">
               {[
@@ -43,7 +43,7 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="md:col-span-3">
+          <div className="md:col-span-2">
             <h4 className="font-display font-semibold text-sm tracking-wider uppercase text-brand-teal-light mb-4">Connect</h4>
             <div className="flex flex-col gap-3">
               <a href="#" className="inline-flex items-center gap-2 text-white/70 hover:text-white transition-colors text-[15px]">
@@ -57,10 +57,29 @@ const Footer = () => {
               </a>
             </div>
           </div>
+
+          <div className="md:col-span-3">
+            <h4 className="font-display font-semibold text-sm tracking-wider uppercase text-brand-teal-light mb-4">Legal</h4>
+            <div className="flex flex-col gap-3">
+              <Link to="/privacy" className="text-white/70 hover:text-white transition-colors text-[15px]">
+                Privacy Policy
+              </Link>
+              <Link to="/data-safety" className="text-white/70 hover:text-white transition-colors text-[15px]">
+                Data Safety
+              </Link>
+              <Link to="/data-safety#delete" className="text-white/70 hover:text-white transition-colors text-[15px]">
+                Delete My Data
+              </Link>
+            </div>
+          </div>
         </div>
 
         <div className="mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-white/40 text-sm">&copy; {new Date().getFullYear()} AfyaQuest. All rights reserved.</p>
+          <div className="flex items-center gap-5">
+            <Link to="/privacy" className="text-white/40 hover:text-white/80 transition-colors text-sm">Privacy</Link>
+            <Link to="/data-safety" className="text-white/40 hover:text-white/80 transition-colors text-sm">Data Safety</Link>
+          </div>
         </div>
       </div>
     </footer>
