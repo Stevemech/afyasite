@@ -104,7 +104,8 @@ function Privacy() {
           </Item>
           <Item>
             <strong className="text-brand-teal-dark">Optional profile details.</strong> Phone number, the organisation
-            you work with, your language preference (English or Kiswahili), and a profile photo.
+            you work with, your language preference (English, Spanish, or Kaqchikel), and a
+            profile photo.
             You can leave these blank.
           </Item>
           <Item>
