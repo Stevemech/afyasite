@@ -10,7 +10,7 @@ import TechStack from '../components/TechStack';
 import Roadmap from '../components/Roadmap';
 import VisitStrip from '../components/VisitStrip';
 import Team from '../components/Team';
-import PressStrip from '../components/PressStrip';
+import News from '../components/News';
 import ContactCTA from '../components/ContactCTA';
 import Footer from '../components/Footer';
 import { useHomeHashScroll } from '../hooks/useHomeHashScroll';
@@ -24,7 +24,7 @@ function Home() {
 
       <main>
         <Hero />
-        <PressStrip />
+        <News />
         <Problem />
         <Solution />
         <Walkthrough />

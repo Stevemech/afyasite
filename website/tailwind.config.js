@@ -31,6 +31,7 @@ export default {
         'float-slow': 'float 10s ease-in-out infinite',
         'pulse-soft': 'pulse-soft 4s ease-in-out infinite',
         'grain': 'grain 8s steps(10) infinite',
+        'marquee': 'marquee 40s linear infinite',
       },
       keyframes: {
         float: {
@@ -40,6 +41,10 @@ export default {
         'pulse-soft': {
           '0%, 100%': { opacity: '0.4' },
           '50%': { opacity: '0.7' },
+        },
+        marquee: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-50%)' },
         },
         grain: {
           '0%, 100%': { transform: 'translate(0, 0)' },

@@ -22,7 +22,7 @@ const Navbar = () => {
     { name: 'Features', sectionId: 'features' },
     { name: 'Walkthrough', sectionId: 'walkthrough' },
     { name: 'Visits', to: '/visits' },
-    { name: 'Media', to: '/media' },
+    { name: 'News', to: '/media' },
     { name: 'Team', sectionId: 'team' },
   ];
 
